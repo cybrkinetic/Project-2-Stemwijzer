@@ -9,7 +9,10 @@
 <body>
 <div class="navbar" id="myNavbar">
   <img id="navbarLogo" src="../img/logo-neutraal-kieslab-lichtblauw.svg"/>
-  <h1 id="navbarKiesLab">Neutraal KiesLab<h1>
+  <div class="h1">
+    <h1 id="navbarKiesLab">Neutraal KiesLab<h1>
+
+  </div>
     <div>
 
       <a href="index.php" class="active">Home</a>

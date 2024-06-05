@@ -3,19 +3,12 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
-
-
-
-
 .navbar {
     display: flex;
     justify-content: space-between;
     background-color: #2B2D42;
     overflow: hidden;
     height: 6vh;
-    
-    margin: 0 auto;
-    justify-content: center;
   }
 .navbar a {
     float: left;
