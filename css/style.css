@@ -8,6 +8,30 @@ box-sizing: border-box;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 8vh 100vh;
 }
+/* 
+Inter Bold:
+Head: 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+ccs: 
+font-family: "Inter", sans-serif;
+font-optical-sizing: auto;
+font-weight: weight;
+font-style: normal;
+font-variation-settings: "slnt" 0;
+
+Quicksand Regular:
+Head:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+ccs: 
+font-family: "Quicksand", sans-serif;
+font-optical-sizing: auto;
+font-weight: <weight>;
+font-style: normal;
+*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -15,6 +39,11 @@ box-sizing: border-box;
     overflow: hidden;
     grid-column: 1 / span 5;
     height: 8vh;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
   }
 .navbar a {
     float: left;
@@ -35,6 +64,7 @@ box-sizing: border-box;
 #navbarLogo{
     height: 6vh;
     background-color: #2B2D42;
+    
   }
 .navbar .icon {
     display: none;
@@ -43,5 +73,4 @@ box-sizing: border-box;
     color: #EDF2F4;
     font-size: 30px;
     line-height: 8vh;
-    font-weight: bold;
   }
