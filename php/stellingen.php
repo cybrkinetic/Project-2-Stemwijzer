@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>Stellingen</title>
 </head>
-<body>
-<div class="container">
-    <?php require "header.php"?>
-</div>
+<body class="container">
+<?php require "header.php"?>
+
 </body>
 </html>
