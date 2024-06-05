@@ -81,45 +81,4 @@ font-optical-sizing: auto;
 font-weight: <weight>;
 font-style: normal;
 */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #2B2D42;
-    overflow: hidden;
-    grid-column: 1 / span 5;
-    height: 8vh;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
-  }
-.navbar a {
-    float: left;
-    display: block;
-    color: #EDF2F4;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    height: 8vh;
-    line-height: 5.5vh;
-    
-  }
-.navbar .nav_a:hover {
-    background-color: #8D99AE;
-    color: #352D27;
-  }
-#navbarLogo{
-    height: 8vh;
-    background-color: #2B2D42;
-    
-  }
-.navbar .icon {
-    display: none;
-  }
-.navbarKieslab{
-    color: #EDF2F4;
-    font-size: 30px;
-    line-height: 8vh;
-  }
+

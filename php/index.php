@@ -10,18 +10,7 @@
 <body class="container">
 <?php require "header.php"?>
 <body>
-    <header class="header-flex">
-      <a id="kieslab" href="index.php">
-        <img id="kieslablogo" src="../img/logo-neutraal-kieslab-lichtblauw.svg" alt="Kieslab Logo">
-      </a>
-      <a href="index.php" id="stemwijzer">NEUTRAAL KIESLAB</a>
-        <div class="navbar" id="navbar-place">
-          <a href="#">HOME</a>
-          <a href="stellingen.php">STELLINGEN</a>
-          <a href="partijen.php">PARTIJEN</a>
-          <a href="nieuws.php">NIEUWSBERICHTEN</a>
-        </div>
-    </header>
+    
 
 <article class="article-main">
 

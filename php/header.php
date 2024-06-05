@@ -1,13 +1,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-<div class="navbar" id="myNavbar">   
-    <img id="navbarLogo" src="../img/logo-neutraal-kieslab-lichtblauw.svg"></img>
-    <div class="navbarKieslab">Neutraal KiesLab</div>
-    <div>
-        <a class="nav_a" href="../php/index.php">Home</a>
-        <a class="nav_a" href="../php/partijen.php">Partijen</a>
-        <a class="nav_a" href="../php/nieuws.php">Nieuws</a>
-        <a class="nav_a" href="../php/stellingen.php">Stellingen</a>
-     </div>
-</div>
+<header class="header-flex">
+      <a id="kieslab" href="index.php">
+        <img id="kieslablogo" src="../img/logo-neutraal-kieslab-lichtblauw.svg" alt="Kieslab Logo">
+      </a>
+      <a href="index.php" id="stemwijzer">NEUTRAAL KIESLAB</a>
+        <div class="navbar" id="navbar-place">
+          <a href="#">HOME</a>
+          <a href="stellingen.php">STELLINGEN</a>
+          <a href="partijen.php">PARTIJEN</a>
+          <a href="nieuws.php">NIEUWSBERICHTEN</a>
+        </div>
+    </header>
