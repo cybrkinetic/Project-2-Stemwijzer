@@ -3,11 +3,60 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
-.container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 8vh 100vh;
+#kieslab {
+  background-color: #2B2D42;
+  height: 80px;
+  border: 1px solid #2B2D42;
 }
+#kieslablogo {
+  height: 40px;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.header-flex {
+  display: flex;
+  background-color: #2b2d42;
+  width: 100%;
+  justify-content:start;
+  align-items: center;
+}
+#stemwijzer {
+  justify-content: left;
+  color: #EDF2F4;
+  font-family: "Inter", sans-serif;
+  margin-left: 10px;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+#navbar-place {
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  justify-content: right;
+  margin-right: 40px;
+  gap: 1em;
+  }
+.navbar a {
+    display: block;
+    color: #EDF2F4;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+.navbar a:hover {
+    background-color: #8D99AE;
+    color: black;
+    border-radius: 5px;
+  }
+.navbar a.active {
+    background-color: #8D99AE;
+    color: #EDF2F4;
+    border-radius: 5px;
+  }
+
 /* 
 Inter Bold:
 Head: 
