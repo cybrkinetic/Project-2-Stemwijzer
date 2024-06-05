@@ -3,37 +3,45 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 8vh 100vh;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     background-color: #2B2D42;
     overflow: hidden;
-    height: 6vh;
+    grid-column: 1 / span 5;
+    height: 8vh;
   }
 .navbar a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #EDF2F4;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
-    height: 6vh;
-    line-height: 4vh;
+    height: 8vh;
+    line-height: 5.5vh;
     
   }
-.navbar a:hover {
+.navbar .nav_a:hover {
     background-color: #8D99AE;
-    color: black;
-  }
-.navbar a.active {
-    background-color: #8D99AE;
-    color: white;
+    color: #352D27;
   }
 #navbarLogo{
     height: 6vh;
-    margin-right: auto;
+    background-color: #2B2D42;
   }
 .navbar .icon {
     display: none;
+  }
+.navbarKieslab{
+    color: #EDF2F4;
+    font-size: 30px;
+    line-height: 8vh;
+    font-weight: bold;
   }
