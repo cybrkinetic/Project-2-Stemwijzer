@@ -17,12 +17,15 @@
 .block {
     grid-row: 2/6;
     grid-column: 1/4;
-    background-color: #EDF2F4;
+    background-color: #edf2f4;
     margin-top: 80px;
     height: 42vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 150px);
+}
+body {
+    min-height: 100vh;
 }
 #startBtn {
     grid-row: 1;
