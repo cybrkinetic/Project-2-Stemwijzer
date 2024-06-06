@@ -21,7 +21,7 @@ final class dbHandler
     public function selectPartijen(){
         try{
             $pdo = new PDO($this->dataSource, $this->username, $this->password);
-            $statement = $pdo->prepare("SELECT partij_naam, partij_site, partij_logo FROM partijen");
+            $statement = $pdo->prepare("SELECT * FROM partijen");
             $statement->execute();
             return $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         }
