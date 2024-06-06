@@ -1,6 +1,5 @@
-<?php include "../dbHandler/dbHandler.php"
-
-
+<?php include "../dbHandler/dbHandler.php";
+$dbHandler = new dbHandler();
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +15,30 @@
 <main>
     <h1>Deze partijen doen mee aan de verkiezingen</h1>
     <div class="partijen-container">
-        <div class="partijen-item">
-            
+    <?php
+        $partijen = $dbHandler->selectPartijen();
+        foreach($partijen as $partij) { ?>
+        <div class="logo-Rand">
+        <div class="start__party">
+            <a href="<?= $partij['partij_site']; ?>" target="_blank">
+                <div class="start__party">
+                    <img class="logo" src="data:image/png;base64,<?= base64_encode($partij['partij_logo']); ?>" alt="logo">
+                </div>
+            </a>
         </div>
+        </div>
+        <div>
 
-        
+            <a href="<?= $partij['partij_site']; ?>" target="_blank">
+            <div class="partijen-naam">
+                    <h1><?= $partij['partij_naam']; ?></h1>
+                </div>
+            </a>
+            </div>
 
+        <?php
+        }
+        ?>
     </div>
 </main>
 </body>
