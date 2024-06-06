@@ -1,7 +1,4 @@
-<?php include "DbHandler.php"
-
-
-
+<?php include "../dbHandler/dbHandler.php"
 
 
 ?>
@@ -19,7 +16,10 @@
 <main>
     <h1>Deze partijen doen mee aan de verkiezingen</h1>
     <div class="partijen-container">
-        
+        <div class="partijen-item">
+            
+        </div>
+
         
 
     </div>
