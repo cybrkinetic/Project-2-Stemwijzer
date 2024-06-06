@@ -17,8 +17,9 @@
 <body class="container">
 <?php include "header.php"?>
 <main>
-    <h1>Partijen</h1>
+    <h1>Deze partijen doen mee aan de verkiezingen</h1>
     <div class="partijen-container">
+        
         
 
     </div>
