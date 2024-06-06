@@ -10,6 +10,10 @@
 <?php include "header.php"?>
 <main>
     <h1>Partijen</h1>
+    <div class="partijen-container">
+        
+
+    </div>
 </main>
 </body>
 </html>
