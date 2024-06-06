@@ -1,3 +1,11 @@
+<?php include "DbHandler.php"
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
