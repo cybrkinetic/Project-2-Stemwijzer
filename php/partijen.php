@@ -19,13 +19,13 @@ $dbHandler = new dbHandler();
         $partijen = $dbHandler->selectPartijen();
         foreach($partijen as $partij) { ?>
         <div class="logo-Rand">
-        <div class="start__party">
             <a href="<?= $partij['partij_site']; ?>" target="_blank">
+        <div class="start__party">
                 <div class="start__party">
                     <img class="logo" src="data:image/png;base64,<?= base64_encode($partij['partij_logo']); ?>" alt="logo">
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
         </div>
         <div>
 
