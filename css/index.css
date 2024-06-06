@@ -1,54 +1,104 @@
-.article-main {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 170px) 150px;
-    display: grid;
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(../img/logo-tegels-achtergrond.svg);
+}
+
+.article-main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    width: 100%;
+    height: 50vh; /* 50% of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
 #tegels {
     width: 100%;
-    height: 85vh;
-    grid-row: 1/2;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 #tegels2 {
     width: 100%;
-    height: 85vh;
-    grid-column: 2;
-    grid-row: 1/2;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
+
 .block {
-    grid-row: 2/6;
-    grid-column: 1/4;
+    width: 100%;
+    height: 50vh; /* 50% of the viewport height */
     background-color: #edf2f4;
-    margin-top: 80px;
-    height: 42vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 150px);
+    display: flex;
+    flex-direction: row;
+    align-items:normal;
+    justify-content: space-between;
+    padding: 20px;
 }
-body {
-    min-height: 100vh;
+.header-flex {
+    margin-top: 40px;
 }
 #startBtn {
-    grid-row: 1;
-    grid-column: 3;
     border-radius: 50px;
-    margin-top: 40px;
     border: none;
     background-color: #8D99AE;
     width: 25vw;
     height: 150px;
     color: #EDF2F4;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: bold;
     font-size: 42px;
     text-align: center;
+    line-height: 150px;
     text-decoration: none;
-    line-height: 25vh;
+    align-items: right;
+    justify-content: right;
+    margin: 20px 0;
+    margin-right: 50px;
 }
+
 #informatie {
-    grid-row: 1;
-    grid-column: 1/3;
-    margin-left: 150px;
-    margin-top: 60px;
-    font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    margin: 20px;
+}
+
+@media (max-width: 768px) {
+    #startBtn {
+        width: 70vw;
+    }
+}
+
+@media (min-width:1300px) {
+    .block {
+        margin-top: -20px;
+    }
+    #startBtn {
+        width: 30vw;
+    }
+    #informatie {
+        font-size: 35px;
+        margin-left: 100px;
+    }
+    .header-flex {
+        margin-top: 30px;
+    }
 }
