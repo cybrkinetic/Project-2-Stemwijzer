@@ -7,7 +7,7 @@
       </a>
       <a href="index.php" id="stemwijzer">NEUTRAAL KIESLAB</a>
         <div class="navbar" id="navbar-place">
-          <a href="#">HOME</a>
+          <a href="index.php">HOME</a>
           <a href="stellingen.php">STELLINGEN</a>
           <a href="partijen.php">PARTIJEN</a>
           <a href="nieuws.php">NIEUWSBERICHTEN</a>
