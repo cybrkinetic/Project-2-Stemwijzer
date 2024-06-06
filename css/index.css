@@ -12,6 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background-image: url(../img/logo-tegels-achtergrond.svg);
 }
 
 .article-main {
@@ -27,6 +28,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
 }
 
 #tegels {
@@ -58,10 +60,9 @@ body {
     border: none;
     background-color: #8D99AE;
     width: 25vw;
-    max-width: 300px;
     height: 150px;
     color: #EDF2F4;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: bold;
     font-size: 42px;
     text-align: center;
@@ -74,8 +75,8 @@ body {
 }
 
 #informatie {
-    font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-family: "Inter", sans-serif;
     text-align: left;
     margin: 20px;
 }
@@ -86,8 +87,18 @@ body {
     }
 }
 
-@media (min-width:1000px) {
+@media (min-width:1300px) {
     .block {
         margin-top: -20px;
+    }
+    #startBtn {
+        width: 30vw;
+    }
+    #informatie {
+        font-size: 35px;
+        margin-left: 100px;
+    }
+    .header-flex {
+        margin-top: 30px;
     }
 }

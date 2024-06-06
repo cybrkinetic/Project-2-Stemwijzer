@@ -13,9 +13,7 @@
 </header>
     <article class="article-main">
         <div class="image-container">
-            <img id="tegels" src="../img/logo-tegels-achtergrond.svg">
-            
-            <img id="tegels2" src="../img/logo-tegels-achtergrond.svg">
+          <img src="../img/logo-tegels-achtergrond.svg">
         </div>
         <div class="block">
             <p id="informatie">De stemwijzer van het Neutraal Kieslab.</p>
