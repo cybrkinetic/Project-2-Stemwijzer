@@ -29,5 +29,16 @@ final class dbHandler
             return "Something went wrong: ". $exception->getMessage();
         }
     }
+    public function selectNieuws(){
+        try{
+            $pdo = new PDO($this->dataSource, $this->username, $this->password);
+            $statement = $pdo->prepare("SELECT * FROM nieuwsberichten");
+            $statement->execute();
+            return $result =$statement->fetchAll(PDO::FETCH_ASSOC);
+        }
+        catch(PDOException $exception){
+            
+        }
+    }
 }
 ?>

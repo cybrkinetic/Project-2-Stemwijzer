@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/nieuws.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -12,18 +12,7 @@
   <link rel="icon" type="image/x-icon" href="../img/logo-neutraal-kieslab-lichtblauw.svg">
     <title>Neutraal KiesLab Stemwijzer</title>
 </head>
-<body class="container">
-  <header class="header-flex">
+<body>
     <?php require "header.php"?>
-</header>
-    <article class="article-main">
-        <div class="image-container">
-          <img src="../img/logo-tegels-achtergrond.svg">
-        </div>
-        <div class="block">
-            <p id="informatie">Welkom bij de stemwijzer van het Neutraal Kieslab. <br>Wij hebben deze gemaakt om u te helpen uw keuze <br> te maken in de verkiezingen. <br> Klik op de start knop om te beginnen!</p>
-            <a id="startBtn" href="stemwijzer.php">START</a>
-        </div>
-    </article>
 </body>
 </html>
