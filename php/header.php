@@ -6,7 +6,7 @@
    <a id="kieslab" href="index.php">
      <img id="kieslablogo" src="../img/logo-neutraal-kieslab-lichtblauw.svg" alt="Kieslab Logo">
    </a>
-   <a href="index.php" id="stemwijzer">NEUTRAAL KIESLAB</a>
+   <a href="index.php" id="stemwijzer">NEUTRAAL<br id="break"> KIESLAB</a>
      <div class="navbar" id="navbar-place">
        <a href="index.php" id="home">HOME</a>
        <a href="stellingen.php">STELLINGEN</a>

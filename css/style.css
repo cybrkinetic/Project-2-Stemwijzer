@@ -59,6 +59,9 @@ box-sizing: border-box;
 .mobile-nav {
   display: none;
 }
+#break {
+  display: none;
+}
   @media(max-width: 880px) {
     #home {
       display: none;
@@ -103,6 +106,9 @@ box-sizing: border-box;
     display: block;
     font-family: "Inter", sans-serif;
     font-weight: bold;
+  }
+  #break {
+    display: block;
   }
 }
 

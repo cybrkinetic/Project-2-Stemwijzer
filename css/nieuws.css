@@ -13,43 +13,44 @@ html, body {
 }
 
 header {
-    flex: 0 0 auto; /* Ensure the header doesn't shrink or grow */
+    flex: 0 0 auto;
 }
 
 
 .block {
-    flex: 0 0 auto; /* Ensure the block doesn't shrink or grow */
+    flex: 0 0 auto; 
     background-color: #EDF2F4;
     padding: 20px;
     margin-top:200px;
-    height: 100%;
+    height: auto;
 }
 
 .infoplace {
-    margin-bottom: 10px; /* Add some spacing between articles */
+    margin-bottom: 10px;
 }
 
 .info-flex {
     display: grid;
-    grid-template-columns: 150px 1fr; /* Fixed size for the image column */
-    gap: 10px; /* Gap between image and text */
-    padding: 10px; /* Padding for better click area */
-    background-color: #EDF2F4; /* Background color for the article box */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth hover transition */
-    align-items: center; /* Center items vertically */
+    grid-template-columns: 150px 1fr;
+    gap: 10px; 
+    padding: 10px; 
+    background-color: #EDF2F4; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+    align-items: center; 
 }
 
 .article-link {
-    display: contents; /* Allow grid layout to be applied to child elements */
+    display: contents; 
     text-decoration: none;
     color: inherit;
 }
 
 .article-image {
-    width: 100%; /* Ensure the image spans the full width of its container */
-    height: 100px; /* Fixed height for the images */
-    object-fit: cover; /* Ensure the image covers the entire area */
+    width: 100%; 
+    height: 100px; 
+    object-fit: cover; 
+    border-radius: 5px;
 }
 
 .article-text {
@@ -75,5 +76,5 @@ header {
 }
 
 .info-flex:hover {
-    background-color: #D3E0E3; /* Change background color on hover */
+    background-color: #D3E0E3;
 }
