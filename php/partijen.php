@@ -18,14 +18,17 @@ $dbHandler = new dbHandler();
     <main>
         <h1 id="title">Deze partijen doen mee aan de verkiezingen</h1>
         <div class="partijen-container">
-            <?php
+
+        <?php
+
         $partijen = $dbHandler->selectPartijen();
-        foreach($partijen as $partij) { ?>
+        foreach($partijen as $partij) { 
+            echo ' 
             <div class="logo-Rand">
-                <a href="<?= $partij['partij_site']; ?>" target="_blank" title="<?= $partij['partij_volldignaam']; ?>">
+                <a href="'. $partij['partij_site'] .'" target="_blank" title="'. $partij['partij_volldignaam'] .'">
                     <div class="start__party">
                         <div class="start__party">
-                            <img class="logo" src="data:image/png;base64,<?= base64_encode($partij['partij_logo']); ?>"
+                            <img class="logo" src="data:image/png;base64,'.  base64_encode($partij['partij_logo']) .'"
                                 alt="logo">
                         </div>
                     </div>
@@ -33,18 +36,19 @@ $dbHandler = new dbHandler();
             </div>
             <div>
 
-                <a href="<?= $partij['partij_site']; ?>" target="_blank">
+                <a href="'. $partij['partij_site'].'" target="_blank">
                     <div class="partijen-naam">
                         <h1>
-                            <?= $partij['partij_naam']; ?>
+                            '. $partij['partij_naam'].'
                         </h1>
                     </div>
                 </a>
             </div>
+        
+            ';}?>
 
-            <?php
-        }
-        ?>
+        
+        
         </div>
     </main>
 </body>
