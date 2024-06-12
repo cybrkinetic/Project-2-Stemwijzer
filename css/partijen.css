@@ -19,6 +19,7 @@ body {
 }
 
 
+
 /* navbar  */
 #kieslab {
     background-color: #2B2D42;
@@ -83,6 +84,10 @@ body {
 }
 
 /* main */
+
+#title{
+    color: black;
+}
 main{
     display: flex;
     flex: 1;
