@@ -62,5 +62,33 @@ form {
     font-weight: bold;
     font-size: 30px;
     text-align: center;
+    box-shadow: 3px 3px 5px #2B2D42;
+}
+#submitBtn:hover {
+    background-color: #2B2D42;
+    transition: background-color 0.5s;
+}
+@media(max-width: 600px) {
+.radio-group label {
+   display: block;
+    align-items: center;
+     margin-left: 0px;
+}
+.grid-container {
+   display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+}
+.statement-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    background-color: #EDF2F4;
+    padding: 10px;
+    transition: background-color 0.3s;
+    grid-column: 1;
+    border-radius: 5px;
 }
 
+}
