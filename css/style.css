@@ -59,15 +59,22 @@ box-sizing: border-box;
 .mobile-nav {
   display: none;
 }
+#mobile-nav {
+  display: none;
+}
 #break {
   display: none;
 }
-  @media(max-width: 880px) {
+  @media(max-width: 930px) {
     #home {
       display: none;
     }
     .navbar {
       margin-right: 10px;
+      
+    }
+    #nieuws, #login, #partijen, #stellingen {
+      font-size: 20px;
     }
 }
 @media(max-width: 760px) {

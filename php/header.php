@@ -9,9 +9,10 @@
    <a href="index.php" id="stemwijzer">NEUTRAAL<br id="break"> KIESLAB</a>
      <div class="navbar" id="navbar-place">
        <a href="index.php" id="home">HOME</a>
-       <a href="stellingen.php">STELLINGEN</a>
-       <a href="partijen.php">PARTIJEN</a>
-       <a href="nieuws.php">NIEUWSBERICHTEN</a>
+       <a href="stellingen.php" id="stellingen">STELLINGEN</a>
+       <a href="partijen.php" id="partijen">PARTIJEN</a>
+       <a href="nieuws.php" id="nieuws">NIEUWSBERICHTEN</a>
+       <a href="login.php" id="login">LOG IN</a>
      </div>
 
      <div id="burger-icon" onclick="toggleMobileNav()" class="nav-toggle">
@@ -25,6 +26,7 @@
        <a href="stellingen.php">STELLINGEN</a>
        <a href="partijen.php">PARTIJEN</a>
        <a href="nieuws.php">NIEUWSBERICHTEN</a>
+       <a href="login.php">LOG IN<a>
      </div>
  </header>
  <script>
