@@ -26,7 +26,7 @@
        <a href="stellingen.php">STELLINGEN</a>
        <a href="partijen.php">PARTIJEN</a>
        <a href="nieuws.php">NIEUWSBERICHTEN</a>
-       <a href="login.php">LOG IN<a>
+       <a href="login.php">LOG IN</a>
      </div>
  </header>
  <script>
