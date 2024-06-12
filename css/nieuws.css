@@ -4,6 +4,7 @@ html, body {
     box-sizing: border-box;
     height: 100%;
     background-image: url(../img/logo-tegels-achtergrond.svg);
+    background-position: center;
 }
 
 .container {
@@ -16,12 +17,11 @@ header {
     flex: 0 0 auto;
 }
 
-
 .block {
     flex: 0 0 auto; 
     background-color: #EDF2F4;
     padding: 20px;
-    margin-top:200px;
+    margin-top: auto;
     height: auto;
 }
 
@@ -31,13 +31,13 @@ header {
 
 .info-flex {
     display: grid;
-    grid-template-columns: 150px 1fr;
     gap: 10px; 
     padding: 10px; 
     background-color: #EDF2F4; 
     border-radius: 5px; 
     transition: background-color 0.3s ease; 
     align-items: center; 
+    width: 100%;
 }
 
 .article-link {
@@ -47,20 +47,24 @@ header {
 }
 
 .article-image {
-    width: 100%; 
+    width: 150px; 
     height: 100px; 
     object-fit: cover; 
     border-radius: 5px;
+    flex-shrink: 0; 
 }
 
 .article-text {
     display: flex;
     flex-direction: column;
     font-family: "Quicksand", sans-serif;
+    overflow: hidden; 
 }
+
 #intro {
     font-family: "Inter", sans-serif;
 }
+
 .date {
     font-weight: bold;
     margin-bottom: 5px;
@@ -77,4 +81,19 @@ header {
 
 .info-flex:hover {
     background-color: #D3E0E3;
+}
+
+@media (max-width: 768px) {
+    .info-flex {
+        grid-template-columns: 1fr;
+    }
+
+    .article-image {
+        width: 100%; 
+        height: auto;
+    }
+
+    .article-text {
+        margin-top: 10px;
+    }
 }
