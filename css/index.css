@@ -66,6 +66,11 @@ body {
     box-shadow: 5px 5px 5px #2b2d42ad;
 }
 
+#startBtn:hover {
+    background-color: #2B2D42;
+    transition: background-color 0.5s;
+}
+
 @media (max-width: 768px) {
     .block {
         flex-direction: column;
@@ -125,8 +130,4 @@ body {
         text-align: center;
     }
     
-}
-#startBtn:hover {
-    background-color: #2B2D42;
-    transition: background-color 0.5s;
 }
