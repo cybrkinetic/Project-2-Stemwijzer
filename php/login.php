@@ -12,22 +12,24 @@
 <body>
     <?php include "header.php" ?>
     <main>
-            <div class="Container_Contact">
+        <div class="Container_Contact">
+            <div>
+                <img id="contact_logo" src="../img/logo-neutraal-kieslab-lichtblauw.svg" alt="Kieslab Logo">
+            </div>
+            <div class="Contact_formulier">
                 <div>
-                    <img id="contact_logo" src="../img/logo-neutraal-kieslab-lichtblauw.svg" alt="Kieslab Logo">
+                    <h1>LOGIN</h1>
                 </div>
-                <div class="Contact_formulier">
-                    <div>
-                        <h1>LOGIN</h1>
-                    </div>
+                <form action="login.php">
                     <input type="email" placeholder="Email" class="inputs_contact">
                     <input type="password" placeholder="Password" class="inputs_contact">
                     <input value="LOGIN" type="submit" class="btn_Contact">
-                </div>
+                </form>
                 <div class="account_maken">
-                    <a href="register.php">Register</a>
+                    <a href="register.php">Nieuwe Account maken</a>
                 </div>
             </div>
+        </div>
     </main>
 
 </body>
