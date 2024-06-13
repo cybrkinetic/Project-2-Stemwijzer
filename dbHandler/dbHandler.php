@@ -37,4 +37,11 @@ final class dbHandler
         } catch (PDOException $exception) {
         }
     }
+    public function getNieuwsById($id) {
+         $pdo = new PDO($this->dataSource, $this->username, $this->password);
+        $statement = $pdo->prepare('SELECT * FROM nieuwsberichten WHERE nieuws_id = ?');
+        $statement->execute([$id]);
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
 }

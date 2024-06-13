@@ -24,19 +24,18 @@ $dbHandler = new dbHandler();
     $nieuws = $dbHandler->selectNieuws();
     $nieuws = array_reverse($nieuws); // Reverse array
     foreach($nieuws as $nieuwsbericht){
-
-    
+echo '<div class="info-flex">';
+    echo '<a class="article-link" href="article.php?nieuws_id=' . $nieuwsbericht['nieuws_id'] . '">'; // Ensure the parameter name matches ?>
+    <img class="article-image" src="data:image/png;base64,<?= base64_encode($nieuwsbericht['nieuws_foto']); ?>" alt="' . $nieuwsbericht['nieuws_titel'] . '"><?php
+    echo '<div class="article-text">';
+    echo '<div class="date">' . $nieuwsbericht['nieuws_datum'] . '</div>';
+    echo '<div class="title">' . $nieuwsbericht['nieuws_titel'] . '</div>';
+    echo '<div class="description">' . $nieuwsbericht['nieuws_desc'] . '</div>';
+    echo '</div>';
+    echo '</a>';
+    echo '</div>';
+    }
     ?>
-   <div class="info-flex infoplace">
-    <a href="<?= $nieuwsbericht['nieuws_href']?>" class="article-link">
-        <img src="data:image/png;base64,<?= base64_encode($nieuwsbericht['nieuws_foto']); ?>" class="article-image">
-        <div class="article-text">
-            <p class="date"><?= $nieuwsbericht['nieuws_datum'] ?></p>
-            <h3 class="title"><?= $nieuwsbericht['nieuws_titel']?></h3>
-            <p class="description"><?= $nieuwsbericht['nieuws_desc']?><p>
-        </div>
-    </a>
-</div>
-<?php } ?>
+   </div>
 </body>
 </html>
