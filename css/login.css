@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #EDF2F4;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/logo-tegels-achtergrond.svg);
+    box-shadow: inset 0 0 0 2000px #2b2d42ad;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+}
+
+
+
+.account_maken{
+    display: grid;
+    grid-column: 2/3;
+    justify-content: right;
+    padding: 30px;
+}
+
+.Container_Contact {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b2d42;
+    border-radius: 20px;
+}
+
+.Contact_formulier {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    padding: 20px;
+}
+
+.Contact_formulier h1 {
+    color: white;
+    margin-bottom: 90px;
+}
+
+.inputs_contact {
+    background-color: #E6E6E6;
+    width: 100%;
+    border-style: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    height: 50px;
+    outline: none;
+    border-radius: 25px;
+    padding: 0 10%;
+    
+}
+
+.btn_Contact {
+    border-radius: 100px;
+    border: none;
+    background-color: #8D99AE;
+    height: 50px;
+    width: 100%;
+    color: #EDF2F4;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+}
