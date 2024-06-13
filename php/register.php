@@ -21,6 +21,7 @@
                     <h1>REGISTREREN</h1>
                 </div>
                 <form action="register.php">
+                    <input type="text" placeholder="Name" class="inputs_contact">
                     <input type="email" placeholder="Email" class="inputs_contact">
                     <input type="password" placeholder="Password" class="inputs_contact">
                     <input value="Registreren" type="submit" class="btn_Contact">
