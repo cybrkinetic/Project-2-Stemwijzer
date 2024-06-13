@@ -27,7 +27,7 @@
                     <input value="Registreren" type="submit" class="btn_Contact">
                 </form>
                 <div class="account_maken">
-                    <a href="login.php"></a>
+                    <a href="login.php">Heeft U wel een account?</a>
                 </div>
             </div>
         </div>

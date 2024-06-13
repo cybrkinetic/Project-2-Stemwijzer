@@ -21,8 +21,8 @@
                     <h1>LOGIN</h1>
                 </div>
                 <form action="login.php">
-                    <input type="email" placeholder="Email" class="inputs_contact">
-                    <input type="password" placeholder="Password" class="inputs_contact">
+                    <input type="email" placeholder="Email" class="inputs_contact" maxlength="20">
+                    <input type="password" placeholder="Password" class="inputs_contact" maxlength="20">
                     <input value="LOGIN" type="submit" class="btn_Contact">
                 </form>
                 <div class="account_maken">
