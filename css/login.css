@@ -28,13 +28,15 @@ main {
     height: 100vh;
 }
 
-
-
-.account_maken{
-    display: grid;
-    grid-column: 2/3;
-    justify-content: right;
+.account_maken {
     padding: 30px;
+
+}
+
+.account_maken:hover {
+    
+    background-color: #2b2d42;
+    
 }
 
 .Container_Contact {
@@ -61,6 +63,11 @@ main {
     margin-bottom: 90px;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .inputs_contact {
     background-color: #E6E6E6;
     width: 100%;
@@ -70,7 +77,6 @@ main {
     outline: none;
     border-radius: 25px;
     padding: 0 10%;
-    
 }
 
 .btn_Contact {
@@ -79,9 +85,35 @@ main {
     background-color: #8D99AE;
     height: 50px;
     width: 100%;
+    min-width: 300px;
     color: #EDF2F4;
     font-weight: bold;
     font-size: 22px;
     text-align: center;
     margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn_Contact:hover, .btn_Contact:focus, .btn_Contact:active {
+    background-color: #666ba4;
+    transform: scale(1.1);
+    
+}
+
+.btn_Contact:after{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+
+@media(max-width: 920px) {
+    .Container_Contact {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #contact_logo{
+        width: 100%;
+        min-width: 300px;
+    }
+
 }

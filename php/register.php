@@ -18,15 +18,15 @@
             </div>
             <div class="Contact_formulier">
                 <div>
-                    <h1>LOGIN</h1>
+                    <h1>REGISTREREN</h1>
                 </div>
-                <form action="login.php">
+                <form action="register.php">
                     <input type="email" placeholder="Email" class="inputs_contact">
                     <input type="password" placeholder="Password" class="inputs_contact">
-                    <input value="LOGIN" type="submit" class="btn_Contact">
+                    <input value="Registreren" type="submit" class="btn_Contact">
                 </form>
                 <div class="account_maken">
-                    <a href="register.php">Nieuwe Account maken</a>
+                    <a href="login.php"></a>
                 </div>
             </div>
         </div>
