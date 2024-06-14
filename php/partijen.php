@@ -14,7 +14,7 @@ $dbHandler = new dbHandler();
     <title>Partijen</title>
 </head>
 
-<body class="container">
+<body>
     <?php include "header.php"?>
     <main>
         <h1 id="title">Deze partijen doen mee aan de verkiezingen</h1>
