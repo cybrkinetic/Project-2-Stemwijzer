@@ -11,11 +11,8 @@ a {
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
     background-image: url(../img/logo-tegels-achtergrond.svg);
-    box-shadow: inset 0 0 0 2000px #2b2d42ad;
+    box-shadow: inset 0 5000px #2b2d42ad;
 }
 
 main {
@@ -33,9 +30,9 @@ main {
 }
 
 .account_maken:hover {
-    
+
     background-color: #2b2d42;
-    
+
 }
 
 .Container_Contact {
@@ -62,11 +59,12 @@ main {
     margin-bottom: 90px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 .inputs_contact {
     background-color: #E6E6E6;
     width: 100%;
@@ -94,10 +92,12 @@ form{
     transition: transform 0.3s;
 }
 
-.btn_Contact:hover, .btn_Contact:focus, .btn_Contact:active {
+.btn_Contact:hover,
+.btn_Contact:focus,
+.btn_Contact:active {
     background-color: #666ba4;
     transform: scale(1.1);
-    
+
 }
 
 
@@ -107,7 +107,8 @@ form{
     .Container_Contact {
         grid-template-columns: repeat(1, 1fr);
     }
-    #contact_logo{
+
+    #contact_logo {
         width: 100%;
         min-width: 300px;
     }

@@ -54,22 +54,18 @@ final class dbHandler
         $user = $statement->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
-            if (password_verify($password, $user['wachtwoord'])) 
-            {
+            if (password_verify($password, $user['wachtwoord'])) {
                 return true;
-            } 
-            else 
-            {
+            } else {
                 return false;
             }
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
-    public function REGISTREREN($user_name, $email, $wachtwoord){
+    public function REGISTREREN($user_name, $email, $wachtwoord)
+    {
         try {
 
             $password_hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
@@ -82,9 +78,7 @@ final class dbHandler
             $statement->execute();
             return true;
         } catch (PDOException $exception) {
-            return "Something went wrong: ". $exception->getMessage();
+            return "Something went wrong: " . $exception->getMessage();
         }
     }
-
-
 }

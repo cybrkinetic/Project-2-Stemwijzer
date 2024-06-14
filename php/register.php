@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $dbHandler = new DBHandler();
     $isRegistreerd = $dbHandler->REGISTREREN($user_name, $email, $wachtwoord);
-    
+
     if ($isRegistreerd === true) {
         $_SESSION['user_mail'] = $email;
         header('Location: index.php');
@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../css/login.css">
     <title>Register Page</title>
 </head>
+
 <body>
     <?php include "header.php"; ?>
     <main>
@@ -53,4 +55,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </main>
 </body>
+
 </html>

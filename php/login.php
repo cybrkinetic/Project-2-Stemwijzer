@@ -1,19 +1,16 @@
 <?php
-var_dump($_POST);
-?>
-<?php
 session_start();
 include "../dbHandler/dbHandler.php";
 $dbHandler = new DBHandler();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { {
-   
-   
+
+
         $email = $_POST['user_mail'];
-       
+
         $password = $_POST['password'];
 
-       
+
         $user = $dbHandler->verifyUser($email, $password);
 
         if ($user) {
@@ -23,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { {
             header('Location:login.php');
             exit;
         }
-    
     }
 }
 ?>
