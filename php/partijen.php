@@ -1,4 +1,5 @@
-<?php include "../dbHandler/dbHandler.php";
+<?php 
+include "../dbHandler/dbHandler.php";
 $dbHandler = new dbHandler();
 ?>
 

@@ -1,3 +1,33 @@
+<?php
+var_dump($_POST);
+?>
+<?php
+session_start();
+include "../dbHandler/dbHandler.php";
+$dbHandler = new DBHandler();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') { {
+   
+   
+        $email = $_POST['user_mail'];
+       
+        $password = $_POST['password'];
+
+       
+        $user = $dbHandler->verifyUser($email, $password);
+
+        if ($user) {
+            $_SESSION['user_mail'] = $email;
+            header('Location:index.php');
+        } else {
+            header('Location:login.php');
+            exit;
+        }
+    
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +36,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
-    <title>login Page</title>
+    <title>Login Page</title>
 </head>
 
 <body>
-    <?php include "header.php" ?>
+    <?php include "header.php"; ?>
     <main>
         <div class="Container_Contact">
             <div>
@@ -20,9 +50,9 @@
                 <div>
                     <h1>LOGIN</h1>
                 </div>
-                <form action="login.php">
-                    <input type="email" placeholder="Email" class="inputs_contact" maxlength="20">
-                    <input type="password" placeholder="Password" class="inputs_contact" maxlength="20">
+                <form method="POST" action="login.php">
+                    <input type="email" name="email" placeholder="Email" class="inputs_contact" maxlength="20" required>
+                    <input type="password" name="password" placeholder="Password" class="inputs_contact" maxlength="20" required>
                     <input value="LOGIN" type="submit" class="btn_Contact">
                 </form>
                 <div class="account_maken">
@@ -34,4 +64,4 @@
 
 </body>
 
-</html
+</html>
