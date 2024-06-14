@@ -1,7 +1,4 @@
 <?php
-var_dump($_POST);
-?>
-<?php
 session_start();
 include "../dbHandler/dbHandler.php";
 $dbHandler = new DBHandler();
