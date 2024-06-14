@@ -1,0 +1,48 @@
+body{
+    background-image: url(../img/logo-tegels-achtergrond.svg);
+}
+.Inter {
+    font-family: "Inter", sans-serif;
+}
+.Quicksand {
+    font-family: "Quicksand", sans-serif;
+}
+.article-content {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
+}
+.container {
+    background-color: WHITE;
+    margin-top: 5PX;
+    grid-column: 2;
+    padding: 20px;
+    border: solid #dce0e1;
+    border-radius: 5px;
+}
+
+.titel {
+    margin-top: 10px;
+    margin-bottom: 10PX;
+    grid-column: 2;
+}
+.date {
+    font-weight: bold;
+    
+    grid-column: 2;
+}
+#image {
+    margin-top: 20px;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#text {
+    grid-column: 2;
+    margin-top: 10px;
+    text-align: justify;
+}
