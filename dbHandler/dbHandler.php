@@ -81,4 +81,21 @@ final class dbHandler
             return "Something went wrong: " . $exception->getMessage();
         }
     }
+     public function saveComment($articleId, $name, $text) {
+        $pdo = new PDO($this->dataSource, $this->username, $this->password);
+        $statement = $pdo->prepare("INSERT INTO comments (article_id, commenter_name, comment_text) VALUES (?, ?, ?)");
+        $statement->bindParam("iss", $articleId, $name, $text);
+        $statement->execute();
+       
+    }
+
+     public function getCommentsByArticleId($articleId) {
+        $pdo = new PDO($this->dataSource, $this->username, $this->password);
+        $stmt = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id ORDER BY comment_date DESC");
+        $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 }

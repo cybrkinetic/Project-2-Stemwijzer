@@ -20,6 +20,7 @@ header {
 .block {
     flex: 0 0 auto; 
     padding: 20px;
+    background-color: #EDF2F4;
     margin-top: auto;
     height: auto;
 }
