@@ -14,7 +14,12 @@
        <a href="nieuws.php" id="nieuws">NIEUWSBERICHTEN</a>
        <a href="login.php" id="login">LOG IN</a>
      </div>
-
+<div class="dark-mode-toggle">
+      <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
      <div id="burger-icon" onclick="toggleMobileNav()" class="nav-toggle">
        <div class="bar"></div>
        <div class="bar"></div>
