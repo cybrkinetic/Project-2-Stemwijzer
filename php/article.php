@@ -49,22 +49,24 @@ if ($article) {
     </article>
 
     <section class="comments-section">
-        <h2>Comments</h2>
+<div class="allComments">
+        <h2 id="comments">Reacties</h2>
         <?php foreach ($comments as $comment): ?>
             <div class="comment">
-                <p><strong><?= htmlspecialchars($comment['commenter_name']) ?>:</strong> <?= nl2br(htmlspecialchars($comment['comment_text'])) ?></p>
-                <p class="comment-date"><?= htmlspecialchars($comment['comment_date']) ?></p>
+                <p><strong><?= htmlspecialchars($comment['comment_naam']) ?>:</strong> <?= nl2br(htmlspecialchars($comment['comment_text'])) ?></p>
+                <p class="comment-date"><?= htmlspecialchars($comment['comment_datum']) ?></p>
             </div>
         <?php endforeach; ?>
 
-        <h3>Leave a Comment</h3>
-        <form action="article.php?nieuws_id=<?= $articleId ?>" method="POST">
-            <label for="name">Name:</label><br>
+        <h3 id="leaveComment">Laat een reactie achter!</h3>
+        <form action="article.php?nieuws_id=<?= $articleId ?>" method="POST" id="formComment">
+            <label for="name">Naam:</label><br>
             <input type="text" id="name" name="name" required><br>
-            <label for="comment_text">Comment:</label><br>
+            <label for="comment_text">Reactie:</label><br>
             <textarea id="comment_text" name="comment_text" rows="4" required></textarea><br>
             <button type="submit">Submit</button>
         </form>
+        </div>
     </section>
 </body>
 </html>

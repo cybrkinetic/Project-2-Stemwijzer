@@ -50,11 +50,28 @@ body{
 .comments-section {
     margin-top: 20px;
     font-family: "Inter", sans-serif;
+    
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
+
+}
+#comment_text, #name {
+    width: 300px;
+}
+.allComments {
+    background-color: white;
+    grid-column: 2/3;
+    border-radius: 5px;
+    border: solid #dce0e1;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .comment {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
+    grid-column: 2/3;
 }
 
 .comment-date {

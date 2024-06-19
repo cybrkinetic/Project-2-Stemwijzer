@@ -83,8 +83,10 @@ final class dbHandler
     }
      public function saveComment($articleId, $name, $text) {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $statement = $pdo->prepare("INSERT INTO comments (article_id, comment_naam, comment_text) VALUES (?, ?, ?)");
-        $statement->bindParam("iss", $articleId, $name, $text);
+        $statement = $pdo->prepare("INSERT INTO comments (article_id, comment_naam, comment_text) VALUES (:article_id, :comment_naam, :comment_text)");
+        $statement->bindParam(':article_id', $articleId, PDO::PARAM_INT);
+        $statement->bindParam(':comment_naam', $name, PDO::PARAM_STR);
+        $statement->bindParam(':comment_text', $text, PDO::PARAM_STR);
         $statement->execute();
        
     }
