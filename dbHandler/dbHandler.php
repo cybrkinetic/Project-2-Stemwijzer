@@ -83,7 +83,7 @@ final class dbHandler
     }
      public function saveComment($articleId, $name, $text) {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $statement = $pdo->prepare("INSERT INTO comments (article_id, commenter_name, comment_text) VALUES (?, ?, ?)");
+        $statement = $pdo->prepare("INSERT INTO comments (article_id, comment_naam, comment_text) VALUES (?, ?, ?)");
         $statement->bindParam("iss", $articleId, $name, $text);
         $statement->execute();
        
@@ -91,7 +91,7 @@ final class dbHandler
 
      public function getCommentsByArticleId($articleId) {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $stmt = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id ORDER BY comment_date DESC");
+        $stmt = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id ORDER BY comment_datum DESC");
         $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
