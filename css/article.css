@@ -46,3 +46,18 @@ body{
     margin-top: 10px;
     text-align: justify;
 }
+/* Add this to your article.css or style.css */
+.comments-section {
+    margin-top: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.comment {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.comment-date {
+    font-size: 0.8em;
+    color: #888;
+}
