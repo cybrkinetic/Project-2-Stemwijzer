@@ -68,6 +68,7 @@ if ($article) {
         </form>
         </div>
     </section>
+    <script src="../js/dark-mode.js"></script>
 </body>
 </html>
 <?php

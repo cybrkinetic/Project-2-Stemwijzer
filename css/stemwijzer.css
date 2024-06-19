@@ -92,3 +92,30 @@ form {
 }
 
 }
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .block {
+    background-color: #2b2d42;
+}
+body.dark-mode #submitBtn {
+    background-color: black;
+    color: #EDF2F4;
+    box-shadow: 5px 5px 5px black;
+}
+body.dark-mode #submitBtn:hover {
+    background-color: rgb(53, 51, 51);;
+}
+body.dark-mode .statement-block {
+    background-color: #2B2D42;
+}
+body.dark-mode .statement-block:hover {
+    background-color: #1d1e2c;
+}
+/* Ensure background image visibility in dark mode */
+body.dark-mode html, body {
+    background-image: url(../img/logo-tegels-achtergrond-dark.svg);
+}

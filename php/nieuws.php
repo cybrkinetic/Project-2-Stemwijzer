@@ -37,5 +37,6 @@ echo '<div class="info-flex">';
     }
     ?>
    </div>
+   <script src="../js/dark-mode.js"></script>
 </body>
 </html>

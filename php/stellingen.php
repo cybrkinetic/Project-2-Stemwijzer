@@ -36,5 +36,6 @@ $dbHandler = new dbHandler();
     } 
     ?>
 </div>
+<script src="../js/dark-mode.js"></script>
 </body>
 </html>

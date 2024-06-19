@@ -16,9 +16,10 @@ $dbHandler = new dbHandler();
     <title>Neutraal KiesLab Stemwijzer</title>
 </head>
 <body class="container">
+    <header>
 <?php require "header.php"?>
 
-
+</header>
 <div class="block">
     <h2 class="text">Klik een antwoord aan voor alle stellingen</h2>
     <?php 
@@ -58,6 +59,7 @@ $dbHandler = new dbHandler();
        <button type="submit" name="submitBtn" id="submitBtn">SUBMIT</button>
                 </form>
 </div>
+  <script src="../js/dark-mode.js"></script>
 </body>
 
 

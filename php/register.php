@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </main>
+    <script src="../js/dark-mode.js"></script>
 </body>
 
 </html>

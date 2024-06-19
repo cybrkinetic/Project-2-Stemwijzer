@@ -43,3 +43,16 @@ body{
 .header-flex{
     grid-column: 1 / span 3;
 }
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+    background-image: none;
+}
+
+body.dark-mode .ulBlock {
+    background-color: #2b2d42;
+    opacity: 95%;
+}
+
+

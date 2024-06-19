@@ -24,6 +24,7 @@
       <a id="startBtn" href="stemwijzer.php">Start</a>
     </div>
   </article>
+  <script src="../js/dark-mode.js"></script>
 </body>
 
 </html>

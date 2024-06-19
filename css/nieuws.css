@@ -97,3 +97,23 @@ header {
         margin-top: 10px;
     }
 }
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .block {
+    background-color: #2b2d42;
+}
+body.dark-mode .info-flex {
+    background-color: #2b2d42;
+}
+body.dark-mode .info-flex:hover {
+    background-color: #1d1e2c;
+
+}
+/* Ensure background image visibility in dark mode */
+body.dark-mode html, body {
+    background-image: url(../img/logo-tegels-achtergrond-dark.svg);
+}
