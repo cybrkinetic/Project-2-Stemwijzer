@@ -81,13 +81,23 @@ final class dbHandler
     }
 
     public function verifyUser($email, $password)
-    {
-        $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $statement = $pdo->prepare('SELECT role FROM users WHERE user_mail = ? AND wachtwoord = ?');
-        $statement->execute([$email, $password]);
+{
+    $pdo = new PDO($this->dataSource, $this->username, $this->password);
+    $statement = $pdo->prepare('SELECT user_naam, role, wachtwoord FROM users WHERE user_mail = ?');
+    $statement->execute([$email]);
 
-        return $statement->fetch(PDO::FETCH_ASSOC);
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user['wachtwoord'])) {
+        return [
+            'username' => $user['user_naam'],
+            'role' => $user['role']
+        ];
     }
+
+    return false;
+}
+
 
     public function REGISTREREN($user_name, $email, $wachtwoord)
     {
