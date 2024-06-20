@@ -1,0 +1,99 @@
+body{
+    background-image: url(../img/logo-tegels-achtergrond.svg);
+}
+.Inter {
+    font-family: "Inter", sans-serif;
+}
+.Quicksand {
+    font-family: "Quicksand", sans-serif;
+}
+.article-content {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
+}
+.container {
+    background-color: WHITE;
+    margin-top: 5PX;
+    grid-column: 2;
+    padding: 20px;
+    border: solid #dce0e1;
+    border-radius: 5px;
+}
+
+.titel {
+    margin-top: 10px;
+    margin-bottom: 10PX;
+    grid-column: 2;
+}
+.date {
+    font-weight: bold;
+    
+    grid-column: 2;
+}
+#image {
+    margin-top: 20px;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#text {
+    grid-column: 2;
+    margin-top: 10px;
+    text-align: justify;
+}
+/* Add this to your article.css or style.css */
+.comments-section {
+    margin-top: 20px;
+    font-family: "Inter", sans-serif;
+    
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
+
+}
+#comment_text, #name {
+    width: 300px;
+}
+.allComments {
+    background-color: white;
+    grid-column: 2/3;
+    border-radius: 5px;
+    border: solid #dce0e1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    grid-column: 2/3;
+}
+
+.comment-date {
+    font-size: 0.8em;
+    color: #888;
+}
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+    color: #e0e0e0;
+    background-image: none;
+    box-shadow: inset 0 5000px #2b2d42ad;
+}
+
+body.dark-mode .container {
+    background-color: #0f0e0ee1;
+    border-color: #232435;
+}
+body.dark-mode .allComments {
+    background-color: #0f0e0ee1;
+    border-color: #232435;
+}
+
+
+
