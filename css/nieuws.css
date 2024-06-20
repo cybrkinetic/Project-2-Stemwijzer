@@ -101,16 +101,21 @@ header {
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
+    
 }
 
 body.dark-mode .block {
-    background-color: #2b2d42;
+    background-color: #1e1b27;
+    box-shadow: inset 0 5000px #2b2d42ad;
+    
 }
 body.dark-mode .info-flex {
-    background-color: #2b2d42;
+    background-color: #1b1822;
+    box-shadow: inset 0 5000px #2b2d42ad;
 }
 body.dark-mode .info-flex:hover {
-    background-color: #1d1e2c;
+    background-color: #11121b;
+    box-shadow: inset 0 5000px #2b2d42ad;
 
 }
 /* Ensure background image visibility in dark mode */

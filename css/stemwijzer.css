@@ -96,6 +96,8 @@ form {
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
+    
+    box-shadow: inset 0 5000px #2b2d42ad;
 }
 
 body.dark-mode .block {
