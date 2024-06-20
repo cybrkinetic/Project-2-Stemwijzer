@@ -1,4 +1,9 @@
-<?php include "../dbHandler/dbHandler.php";
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    
+    session_start();
+}
+include "../dbHandler/dbHandler.php";
 $dbHandler = new dbHandler();
 ?>
 <!DOCTYPE html>

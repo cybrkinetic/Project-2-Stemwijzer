@@ -12,7 +12,12 @@
        <a href="stellingen.php" id="stellingen">STELLINGEN</a>
        <a href="partijen.php" id="partijen">PARTIJEN</a>
        <a href="nieuws.php" id="nieuws">NIEUWSBERICHTEN</a>
-       <a href="login.php" id="login">LOG IN</a>
+       <?php if (isset($_SESSION['username'])): ?>
+            <span>Welkom, <?php echo htmlspecialchars($_SESSION['username']); ?>!</span>
+            <a href="logout.php" id="logout">LOG OUT</a>
+        <?php else: ?>
+            <a href="login.php" id="login">LOG IN</a>
+        <?php endif; ?>
      </div>
 <div class="dark-mode-toggle">
       <label class="switch">
