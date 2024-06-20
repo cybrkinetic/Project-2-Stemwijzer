@@ -34,13 +34,12 @@ final class dbHandler
             $statement = $pdo->prepare("SELECT * FROM nieuwsberichten");
             $statement->execute();
             return $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        }
-        catch(PDOException $exception){
-            
+        } catch (PDOException $exception) {
         }
     }
-    public function createPartij(string $partij_naam, string $partij_site, string $partij_volldignaam){
-        try{
+    public function createPartij(string $partij_naam, string $partij_site, string $partij_volldignaam)
+    {
+        try {
             $pdo = new PDO($this->dataSource, $this->username, $this->password);
             $statement = $pdo->prepare("INSERT INTO partijen(partij_naam, partij_site, partij_volldignaam) 
                                         VALUES(:partij_naam, :partij_site, :partij_volldignaam)");
@@ -48,12 +47,12 @@ final class dbHandler
             $statement->bindParam("partij_site", $partij_site, PDO::PARAM_STR);
             $statement->bindParam("partij_volldignaam", $partij_volldignaam, PDO::PARAM_STR);
             $statement->execute();
-        }
-        catch(PDOException $exception){
+        } catch (PDOException $exception) {
             var_dump($exception);
         }
     }
-    public function editPartij(int $partij_id, string $partij_naam, string $partij_site, string $partij_volldignaam){
+    public function editPartij(int $partij_id, string $partij_naam, string $partij_site, string $partij_volldignaam)
+    {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
         $statement = $pdo->prepare("UPDATE partijen SET partij_naam=:partij_naam, partij_site=:partij_site, partij_volldignaam=:partij_volldignaam WHERE partij_id = :partij_id");
         $statement->bindParam("partij_naam", $partij_naam, PDO::PARAM_STR);
@@ -62,15 +61,14 @@ final class dbHandler
         $statement->bindParam("partij_id", $partij_id, PDO::PARAM_INT);
         $statement->execute();
     }
-    public function deletePartij(int $partij_id){
-        try{
-        $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $statement = $pdo->prepare("DELETE FROM partijen WHERE partij_id = :partij_id");
-        $statement->bindParam("partij_id", $partij_id, PDO::PARAM_INT);
-        $statement->execute();
-        }
-        catch(PDOException $exception){
-            
+    public function deletePartij(int $partij_id)
+    {
+        try {
+            $pdo = new PDO($this->dataSource, $this->username, $this->password);
+            $statement = $pdo->prepare("DELETE FROM partijen WHERE partij_id = :partij_id");
+            $statement->bindParam("partij_id", $partij_id, PDO::PARAM_INT);
+            $statement->execute();
+        } catch (PDOException $exception) {
         } catch (PDOException $exception) {
         }
     }
@@ -85,20 +83,10 @@ final class dbHandler
     public function verifyUser($email, $password)
     {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $statement = $pdo->prepare('SELECT * FROM users WHERE user_mail = :email');
-        $statement->bindParam(':email', $email);
-        $statement->execute();
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement = $pdo->prepare('SELECT role FROM users WHERE user_mail = ? AND wachtwoord = ?');
+        $statement->execute([$email, $password]);
 
-        if ($user) {
-            if (password_verify($password, $user['wachtwoord'])) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     public function REGISTREREN($user_name, $email, $wachtwoord)
@@ -118,23 +106,22 @@ final class dbHandler
             return "Something went wrong: " . $exception->getMessage();
         }
     }
-     public function saveComment($articleId, $name, $text) {
+    public function saveComment($articleId, $name, $text)
+    {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
         $statement = $pdo->prepare("INSERT INTO comments (article_id, comment_naam, comment_text) VALUES (:article_id, :comment_naam, :comment_text)");
         $statement->bindParam(':article_id', $articleId, PDO::PARAM_INT);
         $statement->bindParam(':comment_naam', $name, PDO::PARAM_STR);
         $statement->bindParam(':comment_text', $text, PDO::PARAM_STR);
         $statement->execute();
-       
     }
 
-     public function getCommentsByArticleId($articleId) {
+    public function getCommentsByArticleId($articleId)
+    {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
         $stmt = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id ORDER BY comment_datum DESC");
         $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
 }
