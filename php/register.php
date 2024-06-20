@@ -1,6 +1,5 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    
     session_start();
 }
 include "../dbHandler/dbHandler.php";
@@ -15,14 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($isRegistreerd === true) {
         $_SESSION['user_mail'] = $email;
-        header('Location: index.php');
+        header('Location: login.php');
         exit;
     } else {
         echo 'Registreren is niet gelukt: ' . $isRegistreerd;
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
