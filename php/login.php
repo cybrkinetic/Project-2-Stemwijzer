@@ -1,30 +1,36 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    
+    session_start();
+    var_dump($_SESSION);
+}
 include "../dbHandler/dbHandler.php";
 $dbHandler = new DBHandler();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email']; // Corrected the field name
-    $password = $_POST['password']; // Corrected the field name
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     $user = $dbHandler->verifyUser($email, $password);
 
     if ($user) {
-        $role = $user['role'];
-        if ($role == "gebruiker") {
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
+
+        if ($user['role'] == "gebruiker") {
             header('Location: index.php');
             exit;
-        } else if ($role == "admin") {
+        } else if ($user['role'] == "admin") {
             header('Location: beheerder_stelling.php');
             exit;
         }
     } else {
-        // Redirect to login page if the user does not exist or the password is incorrect
         header('Location: login.php');
         exit;
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
