@@ -1,0 +1,52 @@
+.titelStelling{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+.vraagStelling{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+th{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 20px;
+}
+.checkboxes{
+    text-align: center;
+    vertical-align: middle;
+}
+.empty1{
+    height: 30px;
+}
+.empty2{
+    height: 20px;
+}
+.blockPE{
+    width: 300px;
+    height: 300px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px #2B2D42 solid;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: white;
+    opacity: 95%;
+}
+.blockPC{
+    width: 300px;
+    height: 120px;
+    padding-left: 25px;
+    padding-top: 10px;
+    border: 2px #2B2D42 solid;
+    background-color: white;
+    opacity: 95%;
+}

@@ -1,6 +1,14 @@
 <?php
 include_once "../dbHandler/dbHandler.php";
 $dbHandler = new dbHandler();
+
+if (isset($_POST["createP"])){
+    $dbHandler->createPartij($_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
+} elseif (isset($_POST["editP"])){
+    $dbHandler->editPartij($_POST["partij_id"], $_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
+} elseif (isset($_POST['deleteP'])){
+    $dbHandler->deletePartij($_POST["partij_id"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +35,7 @@ $dbHandler = new dbHandler();
     foreach ($rows as $row) {
     ?>
         <ul class="ulStelling">
-            <li class="titel"><?= $row['titel'] ?></li>
+            <strong><li class="titel"><?= $row['titel'] ?></li></strong>
             <p class="vraag"><?= $row['vraag'] ?></p>
             <p class="empty"></p>
         </ul>
@@ -36,5 +44,8 @@ $dbHandler = new dbHandler();
     } 
     ?>
 </div>
+<form method="POST" action="beheerder_stelling.php">
+    <button type="submit">Beheerder</button>
+</form>
 </body>
 </html>
