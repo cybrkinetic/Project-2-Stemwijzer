@@ -11,8 +11,10 @@ a {
 }
 
 body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-image: url(../img/logo-tegels-achtergrond.svg);
-    box-shadow: inset 0 5000px #2b2d42ad;
 }
 
 main {
@@ -22,7 +24,8 @@ main {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    height: 100vh;
+    box-shadow: inset 0 5000px #2b2d42ad;
+    
 }
 
 .account_maken {
@@ -30,9 +33,7 @@ main {
 }
 
 .account_maken:hover {
-
     background-color: #2b2d42;
-
 }
 
 .Container_Contact {
