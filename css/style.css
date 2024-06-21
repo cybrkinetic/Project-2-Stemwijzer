@@ -76,6 +76,10 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, .25)
 }
 
+.welkom:hover{
+  border-radius: 40px;
+}
+
 .navbar a:hover {
   background-color: #8D99AE;
   color: black;
