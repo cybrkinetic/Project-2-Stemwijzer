@@ -52,6 +52,7 @@
   font-size: 24px;
   font-family: "Inter", sans-serif;
   font-weight: bold;
+  padding: 5px;
   align-content: center;
 }
 
@@ -65,12 +66,21 @@
   font-size: 24px;
   font-family: "Inter", sans-serif;
   font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.welkom:hover {
+  border-radius: 40px;
+  transition: background-color 0.1s;
+  z-index: 2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .25)
 }
 
 .navbar a:hover {
   background-color: #8D99AE;
   color: black;
-  border-radius: 5px;
+  padding: 5px;
+  border-radius: 25px;
   transition: background-color 0.2s;
 }
 
