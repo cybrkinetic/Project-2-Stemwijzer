@@ -13,7 +13,7 @@
        <a href="partijen.php" id="partijen">PARTIJEN</a>
        <a href="nieuws.php" id="nieuws">NIEUWSBERICHTEN</a>
        <?php if (isset($_SESSION['username'])): ?>
-            <a href="MIJN_PROFIEL.PHP" class="welkom">Welkom <?php echo ($_SESSION['username']); ?></a>
+            <a href="profiel.PHP" class="welkom">Welkom <?php echo ($_SESSION['username']); ?></a>
             <a href="logout.php" id="logout">LOG OUT</a>
         <?php else: ?>
             <a href="login.php" id="login">LOG IN</a>
