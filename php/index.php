@@ -26,7 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
   </header>
   <article class="article-main">
     <div class="block">
-      <p id="intro">Welkom bij de stemwijzer van het Neutraal Kieslab. Wij hebben deze gemaakt om u te helpen uw keuze te maken in de verkiezingen. Klik op de start knop om te beginnen!</p>
+      <p id="intro">Wij bij het Neutraal Kieslab willen u helpen om een goed nagedachte keuze te maken in de verkiezingen. Hiervoor hebben wij deze stemwijzer ontwikkeld, klik op de start knop om te beginnen!</p>
       <a id="startBtn" href="stemwijzer.php">Start</a>
     </div>
   </article>
