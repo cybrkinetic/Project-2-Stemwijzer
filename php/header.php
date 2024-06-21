@@ -36,7 +36,12 @@
        <a href="stellingen.php">STELLINGEN</a>
        <a href="partijen.php">PARTIJEN</a>
        <a href="nieuws.php">NIEUWSBERICHTEN</a>
-       <a href="login.php">LOG IN</a>
+       <?php if (isset($_SESSION['username'])): ?>
+            <span class="welkom">Welkom <?php echo ($_SESSION['username']); ?></span>
+            <a href="logout.php" id="logout">LOG OUT</a>
+        <?php else: ?>
+            <a href="login.php" id="login">LOG IN</a>
+        <?php endif; ?>
      </div>
  </header>
  <script>
