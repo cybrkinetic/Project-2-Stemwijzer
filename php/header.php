@@ -13,7 +13,7 @@
        <a href="partijen.php" id="partijen">PARTIJEN</a>
        <a href="nieuws.php" id="nieuws">NIEUWSBERICHTEN</a>
        <?php if (isset($_SESSION['username'])): ?>
-            <span class="welkom">Welkom <?php echo ($_SESSION['username']); ?></span>
+            <a href="MIJN_PROFIEL.PHP" class="welkom">Welkom <?php echo ($_SESSION['username']); ?></a>
             <a href="logout.php" id="logout">LOG OUT</a>
         <?php else: ?>
             <a href="login.php" id="login">LOG IN</a>
@@ -36,12 +36,7 @@
        <a href="stellingen.php">STELLINGEN</a>
        <a href="partijen.php">PARTIJEN</a>
        <a href="nieuws.php">NIEUWSBERICHTEN</a>
-       <?php if (isset($_SESSION['username'])): ?>
-            <span class="welkom">Welkom <?php echo ($_SESSION['username']); ?></span>
-            <a href="logout.php" id="logout">LOG OUT</a>
-        <?php else: ?>
-            <a href="login.php" id="login">LOG IN</a>
-        <?php endif; ?>
+       <a href="MIJN_PROFIEL.php">MIJN PROFIEL</a>
      </div>
  </header>
  <script>
