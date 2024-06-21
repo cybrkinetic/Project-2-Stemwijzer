@@ -40,7 +40,7 @@ $dbHandler = new dbHandler();
                 <p id="vraag"><?= $stellingen['vraag']?></p>
             </div>
             <div class="checkbox-column">
-                <form id="form_<?= $stellingen['titel']?>" method="POST" action="index.php"> <!-- Verander dit naar de result pagina later -->
+                <form id="form_<?= $stellingen['titel']?>" method="POST" action="result.php"> <!-- Verander dit naar de result pagina later -->
                     <input type="hidden" name="stelling" value="<?= $stellingen['titel']?>">
                     <div class="radio-group">
                     <label class="text">
