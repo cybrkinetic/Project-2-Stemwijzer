@@ -1,4 +1,5 @@
-body{
+/* General styles */
+body {
     background-image: url(../img/logo-tegels-achtergrond.svg);
 }
 .Inter {
@@ -7,28 +8,28 @@ body{
 .Quicksand {
     font-family: "Quicksand", sans-serif;
 }
+
+/* Article content styles */
 .article-content {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr 0.5fr;
     grid-template-rows: auto;
 }
 .container {
-    background-color: WHITE;
-    margin-top: 5PX;
+    background-color: white;
+    margin-top: 5px;
     grid-column: 2;
     padding: 20px;
     border: solid #dce0e1;
     border-radius: 5px;
 }
-
 .titel {
     margin-top: 10px;
-    margin-bottom: 10PX;
+    margin-bottom: 10px;
     grid-column: 2;
 }
 .date {
     font-weight: bold;
-    
     grid-column: 2;
 }
 #image {
@@ -36,48 +37,98 @@ body{
     width: 100%;
     grid-column: 2;
     grid-row: 1;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 20px;
 }
 #text {
     grid-column: 2;
     margin-top: 10px;
     text-align: justify;
 }
-/* Add this to your article.css or style.css */
+
+/* Comments section styles */
 .comments-section {
-    margin-top: 20px;
-    font-family: "Inter", sans-serif;
-    
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr 0.5fr;
-    grid-template-rows: auto;
-
-}
-#comment_text, #name {
-    width: 300px;
-}
-.allComments {
-    background-color: white;
-    grid-column: 2/3;
-    border-radius: 5px;
-    border: solid #dce0e1;
+    grid-column: 2;
+    margin-top: 2rem;
     padding: 20px;
-    margin-bottom: 20px;
+    border: 1px solid #dce0e1;
+    border-radius: 5px;
+    background-color: white;
 }
-
+.comments-section h2,
+.comments-section h3 {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 0;
+}
 .comment {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-    grid-column: 2/3;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 4px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
 }
-
-.comment-date {
-    font-size: 0.8em;
+.comment p {
+    margin: 0.5rem 0;
+}
+.comment .comment-date {
+    font-size: 0.85rem;
     color: #888;
 }
+.comment form {
+    margin-top: 0.5rem;
+}
+.comment textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+.comment .button {
+    padding: 0.5rem 1rem;
+    background-color: #8D99AE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.comment .button:hover {
+    background-color: #2B2D42;
+}
+.comment .reply-form {
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+.comment .reply-form textarea {
+    width: calc(100% - 2rem);
+}
+.comment .reply-form button {
+    margin-left: 2rem;
+}
+.comments-section form {
+    margin-top: 1rem;
+}
+.comments-section textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+.comments-section .button {
+    padding: 0.5rem 1rem;
+    background-color: #8D99AE;
+    color: white;
+    border: none;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.comments-section .button:hover {
+    background-color: #2B2D42;
+}
+
+
 /* Dark Mode */
 body.dark-mode {
   background-color: #121212;

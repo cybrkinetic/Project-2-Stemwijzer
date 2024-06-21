@@ -1,25 +1,64 @@
 <?php
-
 if (session_status() === PHP_SESSION_NONE) {
-    
     session_start();
 }
-// article.php
 require "../dbHandler/dbHandler.php"; // Include your database handler
+
+if (!isset($_SESSION['username'])) {
+    echo "You must be logged in to comment.";
+    exit();
+}
+
 $dbHandler = new dbHandler();
 $nieuws = $dbHandler->selectNieuws();
 $articleId = $_GET['nieuws_id'];
 $article = $dbHandler->getNieuwsById($articleId); // Fetch the article by ID
 
+$username = $_SESSION['username']; // Assuming username is stored in the session
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $commentText = $_POST['comment_text'];
-    $dbHandler->saveComment($articleId, $name, $commentText);
-    header("Location: article.php?nieuws_id=" . $articleId); // Prevent form resubmission
-    exit();
+    if (isset($_POST['comment']) && !empty($_POST['comment_text'])) {
+        $commentText = $_POST['comment_text'];
+        $parentId = isset($_POST['parent_id']) ? $_POST['parent_id'] : null;
+        $dbHandler->saveComment($articleId, $username, $commentText, $parentId);
+        header("Location: article.php?nieuws_id=" . $articleId); // Prevent form resubmission
+        exit();
+    } elseif (isset($_POST['edit'])) {
+        $commentId = $_POST['comment_id'];
+        $newText = $_POST['new_text'];
+        $dbHandler->editComment($commentId, $username, $newText);
+    } elseif (isset($_POST['delete'])) {
+        $commentId = $_POST['comment_id'];
+        $dbHandler->deleteComment($commentId, $username);
+    }
 }
 
 $comments = $dbHandler->getCommentsByArticleId($articleId); // Fetch comments for the article
+
+function displayComments($comments, $parentId = null) {
+    foreach ($comments as $comment) {
+        if ($comment['parent_id'] == $parentId) {
+            echo '<div class="comment Quicksand">';
+            echo '<p><strong>' . htmlspecialchars($comment['comment_naam']) . ':</strong> ' . nl2br(htmlspecialchars($comment['comment_text'])) . '</p>';
+            echo '<p class="comment-date Quicksand">' . htmlspecialchars($comment['comment_datum']) . '</p>';
+            if ($_SESSION['username'] == $comment['comment_naam']) {
+                echo '<form method="POST">';
+                echo '<input type="hidden" name="comment_id" value="' . $comment['id'] . '">';
+                echo '<textarea name="new_text">' . htmlspecialchars($comment['comment_text']) . '</textarea>';
+                echo '<button type="submit" name="edit" class="button Inter">Edit</button>';
+                echo '<button type="submit" name="delete" class="button Inter">Delete</button>';
+                echo '</form>';
+            }
+            echo '<form method="POST" class="reply-form">';
+            echo '<input type="hidden" name="parent_id" value="' . $comment['id'] . '">';
+            echo '<textarea name="comment_text" placeholder="Reply to this comment" class="Quicksand" required></textarea>';
+            echo '<button type="submit" name="comment" class="button Inter">Reply</button>';
+            echo '</form>';
+            displayComments($comments, $comment['id']);
+            echo '</div>';
+        }
+    }
+}
 
 if ($article) {
 ?>
@@ -54,26 +93,16 @@ if ($article) {
     </article>
 
     <section class="comments-section">
-<div class="allComments">
-        <h2 id="comments">Reacties</h2>
-        <?php foreach ($comments as $comment): ?>
-            <div class="comment">
-                <p><strong><?= htmlspecialchars($comment['comment_naam']) ?>:</strong> <?= nl2br(htmlspecialchars($comment['comment_text'])) ?></p>
-                <p class="comment-date"><?= htmlspecialchars($comment['comment_datum']) ?></p>
-            </div>
-        <?php endforeach; ?>
+        <h2>Comments</h2>
+        <?php displayComments($comments); ?>
 
-        <h3 id="leaveComment">Laat een reactie achter!</h3>
-        <form action="article.php?nieuws_id=<?= $articleId ?>" method="POST" id="formComment">
-            <label for="name">Naam:</label><br>
-            <input type="text" id="name" name="name" required><br>
-            <label for="comment_text">Reactie:</label><br>
+        <h3>Leave a Comment</h3>
+        <form action="article.php?nieuws_id=<?= $articleId ?>" method="POST">
+            <label for="comment_text" class="Quicksand">Comment:</label><br>
             <textarea id="comment_text" name="comment_text" rows="4" required></textarea><br>
-            <button type="submit">Submit</button>
+            <button type="submit" name="comment" class="button Inter">Submit</button>
         </form>
-        </div>
     </section>
-    <script src="../js/dark-mode.js"></script>
 </body>
 </html>
 <?php

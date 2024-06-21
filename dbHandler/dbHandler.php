@@ -116,22 +116,40 @@ final class dbHandler
             return "Something went wrong: " . $exception->getMessage();
         }
     }
-    public function saveComment($articleId, $name, $text)
-    {
-        $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $statement = $pdo->prepare("INSERT INTO comments (article_id, comment_naam, comment_text) VALUES (:article_id, :comment_naam, :comment_text)");
-        $statement->bindParam(':article_id', $articleId, PDO::PARAM_INT);
-        $statement->bindParam(':comment_naam', $name, PDO::PARAM_STR);
-        $statement->bindParam(':comment_text', $text, PDO::PARAM_STR);
-        $statement->execute();
+    
+   public function saveComment($articleId, $username, $text, $parentId = null) {
+    $pdo = new PDO($this->dataSource, $this->username, $this->password);
+    $query = "INSERT INTO comments (article_id, comment_naam, comment_text, parent_id, comment_datum) VALUES (:article_id, :comment_naam, :comment_text, :parent_id, NOW())";
+    $statement = $pdo->prepare($query);
+    $statement->bindParam(':article_id', $articleId, PDO::PARAM_INT);
+    $statement->bindParam(':comment_naam', $username, PDO::PARAM_STR);
+    $statement->bindParam(':comment_text', $text, PDO::PARAM_STR);
+    if ($parentId !== null) {
+        $statement->bindParam(':parent_id', $parentId, PDO::PARAM_INT);
+    } else {
+        $statement->bindValue(':parent_id', null, PDO::PARAM_NULL);
     }
+    $statement->execute();
+}
+
 
     public function getCommentsByArticleId($articleId)
-    {
-        $pdo = new PDO($this->dataSource, $this->username, $this->password);
-        $stmt = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id ORDER BY comment_datum DESC");
-        $stmt->bindParam(':article_id', $articleId, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+{
+    $pdo = new PDO($this->dataSource, $this->username, $this->password);
+    $statement = $pdo->prepare("SELECT * FROM comments WHERE article_id = ? ORDER BY parent_id, id");
+    $statement->execute([$articleId]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+    public function editComment($commentId, $username, $newText)
+{
+    $pdo = new PDO($this->dataSource, $this->username, $this->password);
+    $statement = $pdo->prepare("UPDATE comments SET comment_text = ? WHERE id = ? AND comment_naam = ?");
+    $statement->execute([$newText, $commentId, $username]);
+}
+    public function deleteComment($commentId, $username)
+{
+    $pdo = new PDO($this->dataSource, $this->username, $this->password);
+    $statement = $pdo->prepare("DELETE FROM comments WHERE id = ? AND comment_naam = ?");
+    $statement->execute([$commentId, $username]);
+}
 }
