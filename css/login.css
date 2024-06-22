@@ -25,7 +25,7 @@ main {
     justify-content: center;
     padding: 20px;
     box-shadow: inset 0 5000px #2b2d42ad;
-    
+
 }
 
 .account_maken {
@@ -42,7 +42,17 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
+    background-color: #2b2d42;
+    border-radius: 20px;
+}
+
+.Container_profiel {
+    padding: 80px;
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
     background-color: #2b2d42;
     border-radius: 20px;
 }
@@ -55,7 +65,8 @@ main {
     padding: 20px;
 }
 
-.Contact_formulier h1 {
+.Contact_formulier h1,
+.Container_profiel h1 {
     color: white;
     margin-bottom: 90px;
 }
