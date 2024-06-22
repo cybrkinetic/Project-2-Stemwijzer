@@ -20,6 +20,7 @@
   display: flex;
   background-color: #2b2d42;
   width: 100%;
+  column-gap: 10px;
   justify-content: space-around;
   align-items: center;
 }
@@ -56,7 +57,12 @@
   align-content: center;
 }
 
+#logout {
+  white-space: nowrap;
+}
+
 .welkom {
+  white-space: nowrap;
   text-decoration: none;
   padding: 5px;
   border: 5px solid #ffffff;
@@ -76,7 +82,7 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, .25)
 }
 
-.welkom:hover{
+.welkom:hover {
   border-radius: 40px;
 }
 
@@ -106,14 +112,17 @@
   display: none;
 }
 
-@media(max-width: 930px) {
+@media(max-width: 1300px) {
   #home {
+    display: none;
+  }
+
+  #mobile-nav {
     display: none;
   }
 
   .navbar {
     margin-right: 10px;
-
   }
 
   #nieuws,
@@ -122,14 +131,109 @@
   #stellingen {
     font-size: 20px;
   }
+
+  #burger-icon {
+    cursor: pointer;
+    padding: 10px;
+
+    top: 16px;
+    right: 20px;
+    z-index: 1000;
+  }
 }
 
-@media(max-width: 760px) {
+@media(max-width: 1090px) {
+  #stellingen {
+    display: none;
+  }
+
+  .bar {
+    width: 25px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    background-color: #2B2D42;
+    z-index: 999;
+  }
+
+  .mobile-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    margin-left: 10px;
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  #burger-icon {
+    cursor: pointer;
+    padding: 10px;
+
+    top: 16px;
+    right: 20px;
+    z-index: 1000;
+  }
+}
+
+@media(max-width: 1005px) {
+  #partijen {
+    display: none;
+  }
+
+  .bar {
+    width: 25px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    background-color: #2B2D42;
+    z-index: 999;
+  }
+
+  .mobile-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    margin-left: 10px;
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+  }
+
+  #burger-icon {
+    cursor: pointer;
+    padding: 10px;
+
+    top: 16px;
+    right: 20px;
+    z-index: 1000;
+  }
+}
+
+@media(max-width: 886px) {
   .navbar {
     display: none;
   }
 
-
+  .dark-mode-toggle {
+    margin-right: 70px;
+  }
 
   #burger-icon {
     cursor: pointer;
@@ -154,7 +258,6 @@
     top: 80px;
     width: 100%;
     background-color: #2B2D42;
-
     z-index: 999;
   }
 
@@ -175,7 +278,6 @@
 
 /* Toggle Switch Styles */
 .dark-mode-toggle {
-  margin-right: 20px;
   margin-left: -40px;
 }
 
