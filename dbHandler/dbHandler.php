@@ -140,7 +140,6 @@ final class dbHandler
         }
         catch(PDOException $exception){
             
-        } catch (PDOException $exception) {
         }
     }
 

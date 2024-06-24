@@ -37,8 +37,6 @@ $dbHandler = new dbHandler();
             <button type="submit" name="createP" value="createP">Aanmaken</button>
         </form>
         </div>
-
-<<<<<<< HEAD
         <div class="blockPE">
         <label>Partij wijzigen of verwijderen:</label>
         <?php 
@@ -124,31 +122,6 @@ $dbHandler = new dbHandler();
             </form>
             <?php }?>
         </div>
-=======
-    foreach ($partijen as $partij){
-    ?>
-    <form method="POST" action="beheerder_stelling.php">
-        <p class="empty1"></p>
-        <input type="hidden" name="partij_id" value="<?= $partij['partij_id'];?>"/>
-        <input name="partij_naam" value="<?= $partij['partij_naam'];?>" type="text"/>
-        <input name="partij_site" value="<?= $partij['partij_site'];?>" type="text"/>
-        <input name="partij_volldignaam" value="<?= $partij['partij_volldignaam'];?>" type="text"/>
-        <button type="submit" name="editP" value="editP">Wijzigen</button>
-        <div class="logo-Rand">
-            <a href="<?= $partij['partij_site'] ?>" target="_blank" title="<?= $partij['partij_volldignaam'] ?>">
-                <div class="start__party">
-                    <img class="logo" src="data:image/png;base64,<?= base64_encode($partij['partij_logo']) ?>" alt="logo">
-                </div>
-            </a>
-        </div>
-        
-        <input type="file" name="file" id="file" value="">
-        <input type="submit" name="submit" value="Uploaden">
-
-        <button type="submit" name="deleteP" value="deleteP">Verwijderen</button>
-    </form>
-    <?php } ?>
->>>>>>> 1c23159a3159f4a15699dd1b4cca2a6faac9eae3
     </div>
 </body>
 </html>
