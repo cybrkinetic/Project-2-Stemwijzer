@@ -74,6 +74,78 @@ final class dbHandler
         } catch (PDOException $exception) {
         }
     }
+
+    public function createStelling(string $titel, string $vraag){
+        try{
+            $pdo = new PDO($this->dataSource, $this->username, $this->password);
+            $statement = $pdo->prepare("INSERT INTO stellingen(titel, vraag) VALUES (:titel, :vraag)");
+            $statement->bindParam("titel", $titel, PDO::PARAM_STR);
+            $statement->bindParam("vraag", $vraag, PDO::PARAM_STR);
+            $statement->execute();
+        }
+        catch(PDOException $exception){
+
+        }
+    }
+    public function editStelling(int $vraag_id, string $titel, string $vraag){
+        $pdo = new PDO($this->dataSource, $this->username, $this->password);
+        $statement = $pdo->prepare("UPDATE stellingen SET titel=:titel, vraag=:vraag WHERE vraag_id = :vraag_id");
+        $statement->bindParam("titel", $titel, PDO::PARAM_STR);
+        $statement->bindParam("vraag", $vraag, PDO::PARAM_STR);
+        $statement->bindParam("vraag_id", $vraag_id, PDO::PARAM_INT);
+        $statement->execute();
+    }
+    public function deleteStelling(int $vraag_id){
+        try{
+        $pdo = new PDO($this->dataSource, $this->username, $this->password);
+        $statement = $pdo->prepare("DELETE FROM stellingen WHERE vraag_id = :vraag_id");
+        $statement->bindParam("vraag_id", $vraag_id, PDO::PARAM_INT);
+        $statement->execute();
+        }
+        catch(PDOException $exception){
+            
+        } catch (PDOException $exception) {
+        }
+    }
+    public function createNieuws(string $nieuws_titel, string $nieuws_desc, string $nieuws_text, string $nieuws_datum){
+        try{
+            $pdo = new PDO($this->dataSource, $this->username, $this->password);
+            $statement = $pdo->prepare("INSERT INTO nieuwsberichten(nieuws_titel, nieuws_desc, nieuws_text, nieuws_datum) 
+                                        VALUES (:nieuws_titel, :nieuws_desc, :nieuws_text, :nieuws_datum)");
+            $statement->bindParam("nieuws_titel", $nieuws_titel, PDO::PARAM_STR);
+            $statement->bindParam("nieuws_desc", $nieuws_desc, PDO::PARAM_STR);
+            $statement->bindParam("nieuws_text", $nieuws_text, PDO::PARAM_STR);
+            $statement->bindParam("nieuws_datum", $nieuws_datum, PDO::PARAM_STR);
+            $statement->execute();
+        }
+        catch(PDOException $exception){
+
+        }
+    }
+    public function editNieuws(int $nieuws_id, string $nieuws_titel, string $nieuws_desc, string $nieuws_text, string $nieuws_datum){
+        $pdo = new PDO($this->dataSource, $this->username, $this->password);
+        $statement = $pdo->prepare("UPDATE nieuwsberichten SET nieuws_titel=:nieuws_titel, nieuws_desc=:nieuws_desc, nieuws_text=:nieuws_text, nieuws_datum=:nieuws_datum 
+                                                           WHERE nieuws_id = :nieuws_id");
+        $statement->bindParam("nieuws_titel", $nieuws_titel, PDO::PARAM_STR);
+        $statement->bindParam("nieuws_desc", $nieuws_desc, PDO::PARAM_STR);
+        $statement->bindParam("nieuws_text", $nieuws_text, PDO::PARAM_STR);
+        $statement->bindParam("nieuws_datum", $nieuws_datum, PDO::PARAM_STR);
+        $statement->bindParam("nieuws_id", $nieuws_id, PDO::PARAM_INT);
+        $statement->execute();
+    }
+    public function deleteNieuws(int $nieuws_id){
+        try{
+        $pdo = new PDO($this->dataSource, $this->username, $this->password);
+        $statement = $pdo->prepare("DELETE FROM nieuwsberichten WHERE nieuws_id = :nieuws_id");
+        $statement->bindParam("nieuws_id", $nieuws_id, PDO::PARAM_INT);
+        $statement->execute();
+        }
+        catch(PDOException $exception){
+            
+        } catch (PDOException $exception) {
+        }
+    }
+
     public function getNieuwsById($id)
     {
         $pdo = new PDO($this->dataSource, $this->username, $this->password);
