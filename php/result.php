@@ -1,9 +1,3 @@
-<?php 
-if (session_status() === PHP_SESSION_NONE) {
-    
-  session_start();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,12 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
   <header class="header-flex">
     <?php require "header.php" ?>
   </header>
-  <article class="article-main">
-    <div class="block">
-      <p id="intro">Wij bij het Neutraal Kieslab willen u helpen om een goed nagedachte keuze te maken in de verkiezingen. Hiervoor hebben wij deze stemwijzer ontwikkeld, klik op de start knop om te beginnen!</p>
-      <a id="startBtn" href="stemwijzer.php">Start</a>
-    </div>
-  </article>
+  
   <script src="../js/dark-mode.js"></script>
 </body>
 

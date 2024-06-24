@@ -1,28 +1,35 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    
+    session_start();
+}
 include "../dbHandler/dbHandler.php";
 $dbHandler = new DBHandler();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') { {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
+    $user = $dbHandler->verifyUser($email, $password);
 
-        $email = $_POST['user_mail'];
+    if ($user) {
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role'];
 
-        $password = $_POST['password'];
-
-
-        $user = $dbHandler->verifyUser($email, $password);
-
-        if ($user) {
-            $_SESSION['user_mail'] = $email;
-            header('Location:index.php');
-        } else {
-            header('Location:login.php');
+        if ($user['role'] == "gebruiker") {
+            header('Location: index.php');
+            exit;
+        } else if ($user['role'] == "admin") {
+            header('Location: beheerder_stelling.php');
             exit;
         }
+    } else {
+        header('Location: login.php');
+        exit;
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,8 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { {
                     <h1>LOGIN</h1>
                 </div>
                 <form method="POST" action="login.php">
-                    <input type="email" name="email" placeholder="Email" class="inputs_contact" maxlength="20" required>
-                    <input type="password" name="password" placeholder="Password" class="inputs_contact" maxlength="20" required>
+                    <input type="email" name="email" placeholder="Email" class="inputs_contact" required>
+                    <input type="password" name="password" placeholder="Password" class="inputs_contact" required>
                     <input value="LOGIN" type="submit" class="btn_Contact">
                 </form>
                 <div class="account_maken">
@@ -57,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { {
             </div>
         </div>
     </main>
-<script src="../js/dark-mode.js"></script>
+    <script src="../js/dark-mode.js"></script>
 </body>
 
 </html>
