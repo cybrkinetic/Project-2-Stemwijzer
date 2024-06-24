@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-image: url(../img/logo-tegels-achtergrond.svg);
+    overflow: hidden;
+}
+.block {
+    background-color: #EDF2F4;
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+   
+    height: 60vh;
+}
+.text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+}
+.result {
+    margin-top: -130px;
+}
+@media (max-width: 670px) {
+    html, body {
+        overflow: visible;
+    }
+    .result {
+        margin-top: -70px;
+    }
+}
+@media (max-width: 420px) {
+    .result {
+        margin-top: 0px;
+        font-size: 35px;
+    }
+}
