@@ -57,6 +57,7 @@ form {
     border: none;
     background-color: #8D99AE;
     height: 70px;
+    width: 100%;
     color: #EDF2F4;
     font-family: "Inter", sans-serif;
     font-weight: bold;
