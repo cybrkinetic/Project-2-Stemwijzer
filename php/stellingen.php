@@ -62,9 +62,6 @@ elseif (isset($_POST["createN"])){
     } 
     ?>
 </div>
-<form method="POST" action="beheerder_stelling.php">
-    <button type="submit">Beheerder</button>
-</form>
 <script src="../js/dark-mode.js"></script>
 </body>
 </html>
