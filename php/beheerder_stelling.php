@@ -12,7 +12,6 @@ $dbHandler = new dbHandler();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/stellingen.css">
     <link rel="stylesheet" href="../css/beheerder.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -127,8 +127,12 @@ th{
 }
 .container{
     margin-left: 30%;
+    
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 300px 15px 300px 15px 300px 1fr;
     grid-template-rows: 15px 400px 15px 400px;
+}
+body{
+    background-image: url("../img/logo-tegels-achtergrond.svg");
 }
