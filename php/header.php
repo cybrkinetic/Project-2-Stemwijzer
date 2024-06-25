@@ -70,7 +70,7 @@ elseif (isset($_POST["createN"])){
     <a href="nieuws.php" id="mobile_nieuwsbericht">NIEUWSBERICHTEN</a>
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") { ?>
       <form mehtod="POST" action="#">
-        <a href="beheerder_stelling.php" id="beheerder">BEHEER</a>
+        <a href="beheerder_stelling.php">BEHEER</a>
       </form>
       <?php } ?>
     <a href="profiel.php">MIJN PROFIEL</a>
