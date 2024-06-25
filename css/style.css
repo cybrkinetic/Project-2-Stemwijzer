@@ -187,6 +187,13 @@
   z-index: 1000;
 }
 }
+@media(min-width: 1090px){
+
+  #mobile-nav{
+    display: block;
+    display: none;
+  }
+}
 @media(max-width: 1090px) {
   #stellingen {
     display: none;
