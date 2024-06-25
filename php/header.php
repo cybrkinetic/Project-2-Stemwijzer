@@ -1,3 +1,29 @@
+<?php
+include_once "../dbHandler/dbHandler.php";
+$dbHandler = new dbHandler();
+
+if (isset($_POST["createP"])){
+    $dbHandler->createPartij($_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
+} elseif (isset($_POST["editP"])){
+    $dbHandler->editPartij($_POST["partij_id"], $_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
+} elseif (isset($_POST['deleteP'])){
+    $dbHandler->deletePartij($_POST["partij_id"]);
+}
+elseif (isset($_POST["createS"])){
+    $dbHandler->createStelling($_POST["titel"], $_POST["vraag"]);
+} elseif (isset($_POST["editS"])){
+    $dbHandler->editStelling($_POST["vraag_id"], $_POST["titel"], $_POST["vraag"]);
+} elseif (isset($_POST["deleteS"])){
+    $dbHandler->deleteStelling($_POST["vraag_id"]);
+}
+elseif (isset($_POST["createN"])){
+    $dbHandler->createNieuws($_POST["nieuws_titel"], $_POST["nieuws_desc"], $_POST["nieuws_text"], $_POST["nieuws_datum"]);
+} elseif (isset($_POST["editN"])){
+    $dbHandler->editNieuws($_POST["nieuws_id"], $_POST["nieuws_titel"], $_POST["nieuws_desc"], $_POST["nieuws_text"], $_POST["nieuws_datum"]);
+} elseif (isset($_POST["deleteN"])){
+    $dbHandler->deleteN($_POST["nieuws_id"]);
+}
+?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -10,7 +36,9 @@
   <div class="navbar" id="navbar-place">
     <a href="index.php" id="home">HOME</a>
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") { ?>
+      <form mehtod="POST" action="#">
         <a href="beheerder_stelling.php" id="beheerder">BEHEERDER</a>
+      </form>
       <?php } ?>
 
     <a href="stellingen.php" id="stellingen">STELLINGEN</a>
