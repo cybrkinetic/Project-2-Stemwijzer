@@ -37,13 +37,13 @@ elseif (isset($_POST["createN"])){
     <a href="index.php" id="home">HOME</a>
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") { ?>
       <form mehtod="POST" action="#">
-        <a href="beheerder_stelling.php" id="beheerder">BEHEERDER</a>
+        <a href="beheerder_stelling.php" id="beheerder">BEHEER</a>
       </form>
       <?php } ?>
 
     <a href="stellingen.php" id="stellingen">STELLINGEN</a>
     <a href="partijen.php" id="partijen">PARTIJEN</a>
-    <a href="nieuws.php" id="nieuws">NIEUWSBERICHTEN</a>
+    <a href="nieuws.php" id="nieuws">NIEUWS</a>
     <?php if (isset($_SESSION['username'])) : ?>
       <a href="profiel.PHP" class="welkom">Welkom <?php echo ($_SESSION['username']); ?></a>
       <a href="logout.php" id="logout">LOG OUT</a>
