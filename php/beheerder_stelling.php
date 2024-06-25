@@ -28,7 +28,7 @@ $dbHandler = new dbHandler();
     <div class="container">
         <div class="blockPC">
         <form method="POST" action="#">
-            <label>Partij aanmaken:</label>
+            <label class="label-beheer">Partij aanmaken:</label>
             <p class="empty2"></p>
             <input name="partij_naam" placeholder="Naam" type="text"/>
             <input name="partij_site" placeholder="Site" type="text"/>
@@ -37,7 +37,7 @@ $dbHandler = new dbHandler();
         </form>
         </div>
         <div class="blockPE">
-        <label>Partij wijzigen of verwijderen:</label>
+        <label class="label-beheer">Partij wijzigen of verwijderen:</label>
         <?php 
         require_once '../dbHandler/dbHandler.php';
         $dbHandler = new dbHandler();
@@ -59,7 +59,7 @@ $dbHandler = new dbHandler();
         
         <div class="blockSC">
             <form method="POST" action="#">
-                <label>Stelling aanmaken:</label>
+                <label class="label-beheer">Stelling aanmaken:</label>
                 <p class="empty2"></p>
                 <input name="titel" placeholder="Titel" type="text"/>
                 <textarea id="stelling" name="vraag" placeholder="Stelling" type="text"></textarea>
@@ -68,7 +68,7 @@ $dbHandler = new dbHandler();
         </div>
 
         <div class="blockSED">
-            <label>Stelling wijzigen of verwijderen:</label>
+            <label class="label-beheer">Stelling wijzigen of verwijderen:</label>
             <?php
             require_once '../dbHandler/dbHandler.php';
             $dbHandler = new dbHandler();
@@ -88,7 +88,7 @@ $dbHandler = new dbHandler();
         </div>
 
         <div class="blockNC">
-            <label>Nieuws aanmaken:</label>
+            <label class="label-beheer">Nieuws aanmaken:</label>
             <form method="POST" action="#">
                 <p class="empty2"></p>
                 <textarea id="nieuws_titel" name="nieuws_titel" placeholder="Titel" type="text"></textarea>
@@ -101,7 +101,7 @@ $dbHandler = new dbHandler();
         </div>
 
         <div class="blockNED">
-            <label> Nieuws wijzigen of verwijderen:</label>
+            <label class="label-beheer"> Nieuws wijzigen of verwijderen:</label>
             <?php
             require_once '../dbHandler/dbHandler.php';
             $dbHandler = new dbHandler();
@@ -123,4 +123,5 @@ $dbHandler = new dbHandler();
         </div>
     </div>
 </body>
+<script src="../js/dark-mode.js"></script>
 </html>
