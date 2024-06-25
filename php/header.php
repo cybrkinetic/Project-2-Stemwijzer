@@ -2,26 +2,24 @@
 include_once "../dbHandler/dbHandler.php";
 $dbHandler = new dbHandler();
 
-if (isset($_POST["createP"])){
-    $dbHandler->createPartij($_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
-} elseif (isset($_POST["editP"])){
-    $dbHandler->editPartij($_POST["partij_id"], $_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
-} elseif (isset($_POST['deleteP'])){
-    $dbHandler->deletePartij($_POST["partij_id"]);
-}
-elseif (isset($_POST["createS"])){
-    $dbHandler->createStelling($_POST["titel"], $_POST["vraag"]);
-} elseif (isset($_POST["editS"])){
-    $dbHandler->editStelling($_POST["vraag_id"], $_POST["titel"], $_POST["vraag"]);
-} elseif (isset($_POST["deleteS"])){
-    $dbHandler->deleteStelling($_POST["vraag_id"]);
-}
-elseif (isset($_POST["createN"])){
-    $dbHandler->createNieuws($_POST["nieuws_titel"], $_POST["nieuws_desc"], $_POST["nieuws_text"], $_POST["nieuws_datum"]);
-} elseif (isset($_POST["editN"])){
-    $dbHandler->editNieuws($_POST["nieuws_id"], $_POST["nieuws_titel"], $_POST["nieuws_desc"], $_POST["nieuws_text"], $_POST["nieuws_datum"]);
-} elseif (isset($_POST["deleteN"])){
-    $dbHandler->deleteNieuws($_POST["nieuws_id"]);
+if (isset($_POST["createP"])) {
+  $dbHandler->createPartij($_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
+} elseif (isset($_POST["editP"])) {
+  $dbHandler->editPartij($_POST["partij_id"], $_POST["partij_naam"], $_POST["partij_site"], $_POST["partij_volldignaam"]);
+} elseif (isset($_POST['deleteP'])) {
+  $dbHandler->deletePartij($_POST["partij_id"]);
+} elseif (isset($_POST["createS"])) {
+  $dbHandler->createStelling($_POST["titel"], $_POST["vraag"]);
+} elseif (isset($_POST["editS"])) {
+  $dbHandler->editStelling($_POST["vraag_id"], $_POST["titel"], $_POST["vraag"]);
+} elseif (isset($_POST["deleteS"])) {
+  $dbHandler->deleteStelling($_POST["vraag_id"]);
+} elseif (isset($_POST["createN"])) {
+  $dbHandler->createNieuws($_POST["nieuws_titel"], $_POST["nieuws_desc"], $_POST["nieuws_text"], $_POST["nieuws_datum"]);
+} elseif (isset($_POST["editN"])) {
+  $dbHandler->editNieuws($_POST["nieuws_id"], $_POST["nieuws_titel"], $_POST["nieuws_desc"], $_POST["nieuws_text"], $_POST["nieuws_datum"]);
+} elseif (isset($_POST["deleteN"])) {
+  $dbHandler->deleteNieuws($_POST["nieuws_id"]);
 }
 ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,13 +37,13 @@ elseif (isset($_POST["createN"])){
       <form class="form_beheer" mehtod="POST" action="#">
         <a href="beheerder_stelling.php" id="beheerder">BEHEER</a>
       </form>
-      <?php } ?>
+    <?php } ?>
 
     <a href="stellingen.php" id="stellingen">STELLINGEN</a>
     <a href="partijen.php" id="partijen">PARTIJEN</a>
     <a href="nieuws.php" id="nieuws">NIEUWS</a>
     <?php if (isset($_SESSION['username'])) : ?>
-      <a href="profiel.PHP" class="welkom">Welkom <?php echo ($_SESSION['username']); ?></a>
+      <a href="profiel.PHP" class="welkom">Welkom <?= ($_SESSION['username']); ?></a>
       <a href="logout.php" id="logout">LOG OUT</a>
     <?php else : ?>
       <a href="login.php" id="login">LOG IN</a>
@@ -72,8 +70,15 @@ elseif (isset($_POST["createN"])){
       <form mehtod="POST" action="#">
         <a href="beheerder_stelling.php">BEHEER</a>
       </form>
-      <?php } ?>
-    <a href="profiel.php">MIJN PROFIEL</a>
+    <?php } ?>
+    <?php if (isset($_SESSION['username'])) : ?>
+      <a href="profiel.PHP" class="welkom">Welkom <?= ($_SESSION['username']); ?></a>
+      <a href="logout.php" id="logout">LOG OUT</a>
+    <?php else : ?>
+      <a href="login.php" id="login">LOG IN</a>
+    <?php endif; ?>
+  </div>
+    
   </div>
 </header>
 <script>
@@ -85,4 +90,11 @@ elseif (isset($_POST["createN"])){
       mobileNav.style.display = "flex";
     }
   }
+
+  window.addEventListener('resize', function() {
+    var mobileNav = document.getElementById('mobile-nav');
+    if (window.innerWidth > 886 && mobileNav.style.display === "flex") {
+      mobileNav.style.display = "none";
+    }
+  });
 </script>

@@ -147,9 +147,7 @@
 #stellingen, #home, #partijen {
   display: none;
 }
-#mobile-nav {
-  display: block;
-}
+
 
 .bar {
   width: 25px;
