@@ -21,7 +21,7 @@ elseif (isset($_POST["createN"])){
 } elseif (isset($_POST["editN"])){
     $dbHandler->editNieuws($_POST["nieuws_id"], $_POST["nieuws_titel"], $_POST["nieuws_desc"], $_POST["nieuws_text"], $_POST["nieuws_datum"]);
 } elseif (isset($_POST["deleteN"])){
-    $dbHandler->deleteN($_POST["nieuws_id"]);
+    $dbHandler->deleteNieuws($_POST["nieuws_id"]);
 }
 ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">

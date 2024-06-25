@@ -5,7 +5,6 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 include_once "../dbHandler/dbHandler.php";
 $dbHandler = new dbHandler();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
