@@ -36,7 +36,7 @@ elseif (isset($_POST["createN"])){
   <div class="navbar" id="navbar-place">
     <a href="index.php" id="home">HOME</a>
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") { ?>
-      <form mehtod="POST" action="#">
+      <form class="form_beheer" mehtod="POST" action="#">
         <a href="beheerder_stelling.php" id="beheerder">BEHEER</a>
       </form>
       <?php } ?>
@@ -68,6 +68,11 @@ elseif (isset($_POST["createN"])){
     <a href="stellingen.php" id="mobile_stellingen">STELLINGEN</a>
     <a href="partijen.php" id="mobile_partijen">PARTIJEN</a>
     <a href="nieuws.php" id="mobile_nieuwsbericht">NIEUWSBERICHTEN</a>
+    <?php if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") { ?>
+      <form mehtod="POST" action="#">
+        <a href="beheerder_stelling.php" id="beheerder">BEHEER</a>
+      </form>
+      <?php } ?>
     <a href="profiel.php">MIJN PROFIEL</a>
   </div>
 </header>
