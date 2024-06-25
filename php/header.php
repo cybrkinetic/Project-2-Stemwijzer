@@ -68,7 +68,7 @@ elseif (isset($_POST["createN"])){
     <a href="stellingen.php" id="mobile_stellingen">STELLINGEN</a>
     <a href="partijen.php" id="mobile_partijen">PARTIJEN</a>
     <a href="nieuws.php" id="mobile_nieuwsbericht">NIEUWSBERICHTEN</a>
-    <a href="MIJN_PROFIEL.php">MIJN PROFIEL</a>
+    <a href="profiel.php">MIJN PROFIEL</a>
   </div>
 </header>
 <script>
