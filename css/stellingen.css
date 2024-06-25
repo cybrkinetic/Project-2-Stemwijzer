@@ -43,6 +43,14 @@ body{
 .header-flex{
     grid-column: 1 / span 3;
 }
+@media (max-width: 500px) {
+body {
+    grid-template-columns: 1fr 300px 1fr;
+}
+.ulBlock {
+    width: auto;
+}
+}
 /* Dark Mode */
 body.dark-mode {
     background-color: #121212;
