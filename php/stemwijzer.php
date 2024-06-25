@@ -55,7 +55,7 @@ $dbHandler = new dbHandler();
             </div>
         </div>
         <?php } ?>
-        <button type="submit" name="submitBtn" id="submitBtn">SUBMIT</button>
+        <button type="submit" name="submitBtn" id="submitBtn">Verstuur</button>
         </form>
     </div>
     <script src="../js/dark-mode.js"></script>

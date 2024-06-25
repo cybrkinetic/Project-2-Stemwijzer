@@ -45,14 +45,14 @@ function displayComments($comments, $parentId = null) {
                 echo '<form method="POST">';
                 echo '<input type="hidden" name="comment_id" value="' . $comment['id'] . '">';
                 echo '<textarea name="new_text">' . htmlspecialchars($comment['comment_text']) . '</textarea>';
-                echo '<button type="submit" name="edit" class="button Inter">Edit</button>';
-                echo '<button type="submit" name="delete" class="button Inter">Delete</button>';
+                echo '<button type="submit" name="edit" class="button Inter">Wijzig</button>';
+                echo '<button type="submit" name="delete" class="button Inter">Verwijder</button>';
                 echo '</form>';
             }
             echo '<form method="POST" class="reply-form">';
             echo '<input type="hidden" name="parent_id" value="' . $comment['id'] . '">';
-            echo '<textarea name="comment_text" placeholder="Reply to this comment" class="Quicksand" required></textarea>';
-            echo '<button type="submit" name="comment" class="button Inter">Reply</button>';
+            echo '<textarea name="comment_text" placeholder="Reageer op deze reactie" class="Quicksand" required></textarea>';
+            echo '<button type="submit" name="comment" class="button Inter">Reageer</button>';
             echo '</form>';
             displayComments($comments, $comment['id']);
             echo '</div>';
@@ -93,14 +93,14 @@ if ($article) {
     </article>
 
     <section class="comments-section">
-        <h2>Comments</h2>
+        <h2>Reacties</h2>
         <?php displayComments($comments); ?>
 
-        <h3>Leave a Comment</h3>
+        <h3>Laat een reactie achter!</h3>
         <form action="article.php?nieuws_id=<?= $articleId ?>" method="POST">
-            <label for="comment_text" class="Quicksand">Comment:</label><br>
+            <label for="comment_text" class="Quicksand">Reactie:</label><br>
             <textarea id="comment_text" name="comment_text" rows="4" required></textarea><br>
-            <button type="submit" name="comment" class="button Inter">Submit</button>
+            <button type="submit" name="comment" class="button Inter">Verstuur</button>
         </form>
     </section>
 </body>
