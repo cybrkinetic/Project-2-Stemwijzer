@@ -9,6 +9,11 @@
   <a href="index.php" id="stemwijzer">NEUTRAAL<br id="break"> KIESLAB</a>
   <div class="navbar" id="navbar-place">
     <a href="index.php" id="home">HOME</a>
+    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SESSION['role'] == "admin") { ?>
+  <a href="beheerder_stelling.php" id="beheerder">BEHEERDER</a>
+ <?php }} ?>
+
     <a href="stellingen.php" id="stellingen">STELLINGEN</a>
     <a href="partijen.php" id="partijen">PARTIJEN</a>
     <a href="nieuws.php" id="nieuws">NIEUWSBERICHTEN</a>
