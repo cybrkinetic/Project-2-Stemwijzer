@@ -2,26 +2,26 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require "../dbHandler/dbHandler.php"; // Include your database handler
+require "../dbHandler/dbHandler.php"; 
 
 if (!isset($_SESSION['username'])) {
-    echo "You must be logged in to comment.";
+    echo "Sorry, hiervoor moet je ingelogd zijn.";
     exit();
 }
 
 $dbHandler = new dbHandler();
 $nieuws = $dbHandler->selectNieuws();
 $articleId = $_GET['nieuws_id'];
-$article = $dbHandler->getNieuwsById($articleId); // Fetch the article by ID
+$article = $dbHandler->getNieuwsById($articleId); // Pak het artikel uit de ID
 
-$username = $_SESSION['username']; // Assuming username is stored in the session
+$username = $_SESSION['username']; // Pak user uit de session
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['comment']) && !empty($_POST['comment_text'])) {
         $commentText = $_POST['comment_text'];
         $parentId = isset($_POST['parent_id']) ? $_POST['parent_id'] : null;
         $dbHandler->saveComment($articleId, $username, $commentText, $parentId);
-        header("Location: article.php?nieuws_id=" . $articleId); // Prevent form resubmission
+        header("Location: article.php?nieuws_id=" . $articleId); // Zodat form niet opnieuw kan sturen
         exit();
     } elseif (isset($_POST['edit'])) {
         $commentId = $_POST['comment_id'];
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$comments = $dbHandler->getCommentsByArticleId($articleId); // Fetch comments for the article
+$comments = $dbHandler->getCommentsByArticleId($articleId); // Pak alle reacties op dat artikel
 
 function displayComments($comments, $parentId = null) {
     foreach ($comments as $comment) {
@@ -107,6 +107,6 @@ if ($article) {
 </html>
 <?php
 } else {
-    echo "Article not found.";
+    echo "Artikel niet gevonden.";
 }
 ?>
